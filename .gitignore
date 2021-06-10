@@ -1,0 +1,25 @@
+### Adobe Files ###
+*.psd
+*.ai
+
+### Windows Files ###
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs.db
+
+*.stackdump
+
+[Dd]esktop.ini
+
+$RECYCLE.BIN/
+
+### Web Files ###
+*.scss
+*.css.map
+*.php
+
+### Archieve ###
+*.rar
+*.7z
+*.zip

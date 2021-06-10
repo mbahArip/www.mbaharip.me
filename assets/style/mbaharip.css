@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.font__roboto {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.font__shippori {
+  font-family: 'Shippori Mincho', serif;
+}
+
+.font__italic {
+  font-style: italic;
+}
+
+.font__bold {
+  font-weight: bold;
+}
+
+.font__bolder {
+  font-weight: bolder;
+}
+
+.font__lighter {
+  font-weight: lighter;
+}
+
+.font__w100 {
+  font-weight: 100;
+}
+
+.font__w200 {
+  font-weight: 200;
+}
+
+.font__w300 {
+  font-weight: 300;
+}
+
+.font__w400 {
+  font-weight: 400;
+}
+
+.font__w500 {
+  font-weight: 500;
+}
+
+.font__w600 {
+  font-weight: 600;
+}
+
+.font__w700 {
+  font-weight: 700;
+}
+
+.font__w800 {
+  font-weight: 800;
+}
+
+.font__w900 {
+  font-weight: 900;
+}
+/*# sourceMappingURL=mbaharip.css.map */
