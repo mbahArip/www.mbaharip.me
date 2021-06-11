@@ -45,19 +45,117 @@
 
 	<body>
 		<section id="header">
-			<div class="header__logo">
-				<img src="assets/images/logo_icon.svg" alt="logo_icon" class="logo__icon" />
-				<img src="assets/images/logo_text.svg" alt="logo_text" class="logo__text" />
+			<div class="header__main">
+				<div class="main__logo">
+					<img src="assets/images/logo_icon.svg" alt="logo_icon" class="logo__icon" />
+					<img src="assets/images/logo_text.svg" alt="logo_text" class="logo__text" />
+				</div>
+				<div class="main__description font__roboto">
+					<span class="logo__descriptionTop style__w600">3D Works | Design Graphics | Developer</span>
+					<div class="logo__descriptionBottom">
+						<span class="descriptionBottom__first style__italic">Dream as if you will live forever</span>
+						<span class="descriptionBottom__second style__italic">Live as if you will die today</span>
+					</div>
+				</div>
 			</div>
-			<div class="header__description">
-				<span class="description__top"></span>
-				<span class="description__bottom"></span>
-			</div>
-			<div class="header__menu">
-				<a href="" class="menu__link">About</a>
-				<a href="" class="menu__link">Project</a>
+			<div class="header__menu font__roboto">
+				<a href="#about" class="menu__link">About</a>
+				<a href="#works" class="menu__link">Works</a>
 				<a href="" class="menu__link">Contact</a>
 			</div>
 		</section>
+		<div id="gap" class="gap__headerabout"></div>
+		<section id="about">
+			<img src="assets/images/logo_about.svg" alt="about" class="about__logo" />
+			<div class="about__about">
+				<p class="about__me font__roboto">
+					Hello, My name is Arief Rachmawan, I'm currently a student on local university, Sekolah Tinggi
+					Teknologi Bandung. <br />
+					I love doing 3D Works, Graphic Design, and creating website. <br />
+					For 3D Works, I mainly using Blender, and for Designing I mainly use Affinity Designer. <br />
+					I'm gonna post all my works here, hope you like it!
+				</p>
+				<div class="about__separator"></div>
+				<div class="about__team font__roboto">
+					<h1>Member of</h1>
+					<div class="team__list">
+						<div class="list__details">
+							<h3>Symphonic Modding Team</h3>
+							<span class="details__description">Focusing on GTA V and Assetto Corsa Mods.</span>
+							<div class="details__social">
+								<a
+									href="https://www.facebook.com/TeamSymphonic"
+									class="social__link"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<i class="fab fa-facebook"></i>
+								</a>
+							</div>
+						</div>
+						<div class="list__details">
+							<h3>Neko Alliance Design</h3>
+							<span class="details__description"
+								>If you need wrap design for your vehicle, contact us!</span
+							>
+							<div class="details__social">
+								<a
+									href="https://www.facebook.com/NekoAllianceDesign"
+									class="social__link"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<i class="fab fa-facebook"></i>
+								</a>
+							</div>
+						</div>
+						<div class="list__details">
+							<h3>Hallucinogen</h3>
+							<span class="details__description">Focusing on 3D works</span>
+							<div class="details__social">
+								<a href="" class="social__link" target="_blank" rel="noopener noreferrer">
+									<i class="fab fa-facebook"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div id="gap" class="gap__aboutworks"></div>
+		<section id="works">
+			<img src="assets/images/logo_works.svg" alt="works" class="works__logo" />
+			<div class="works__post">
+				<div class="post__grid font__roboto">
+					<a href="posts?id=1" class="grid__post">
+						<div class="post__thumb">
+							<img src="assets/images/J2U5411s14-1024x676.jpg" alt="" class="thumb__image" />
+							<div class="post__category">
+								<div class="category__title">3D Models</div>
+							</div>
+						</div>
+						<div class="post__details">
+							<span class="details__title style__w900 font__shippori">S14 Wonder Glare</span>
+							<span class="details__description"
+								>Disini harusnya deskripsi, tapi gw ga tau harus nulis apa. Tapi karena disini butuh
+								sesuatu untuk di isi, jadi yah bodo amat lah.</span
+							>
+							<div class="details__extra">
+								<span class="extra__status"
+									><i class="fas fa-dollar-sign color__whiteInactive"></i
+								></span>
+								<span class="extra__date">20 Jan 2021</span>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="post__separator"></div>
+				<div class="post__more font__roboto">
+					<div class="more__title style__bolder">See more</div>
+					<button class="more__button style__bold">Go to Gallery Page ></button>
+				</div>
+			</div>
+		</section>
+		<div id="gap" class="gap__workscontact"></div>
 	</body>
 </html>
