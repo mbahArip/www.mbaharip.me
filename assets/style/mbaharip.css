@@ -1,3 +1,10 @@
+div#navigation,
+section#works,
+div.gap__aboutworks,
+div.gap__workscontact {
+  display: none !important;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -298,20 +305,21 @@ div#navigation div.navigation__menu {
           align-items: center;
   padding-right: 5vw;
   gap: 2rem;
+  border-bottom: 1px solid transparent;
   position: fixed;
   top: 0;
   z-index: 10;
-  -webkit-transition: top 0.25s;
-  transition: top 0.25s;
+  -webkit-transition: top 0.25s, background 0.25s;
+  transition: top 0.25s, background 0.25s;
 }
 
 div#navigation div.navigation__menu a.menu__items {
   color: #c2c2c2;
   font-size: 1.5rem;
-  -webkit-transition: color 0.25s, -webkit-transform 0.25s;
-  transition: color 0.25s, -webkit-transform 0.25s;
-  transition: transform 0.25s, color 0.25s;
-  transition: transform 0.25s, color 0.25s, -webkit-transform 0.25s;
+  -webkit-transition: color 0.25s, opacity 0.25s, -webkit-transform 0.25s;
+  transition: color 0.25s, opacity 0.25s, -webkit-transform 0.25s;
+  transition: transform 0.25s, color 0.25s, opacity 0.25s;
+  transition: transform 0.25s, color 0.25s, opacity 0.25s, -webkit-transform 0.25s;
 }
 
 div#navigation div.navigation__menu a.menu__items:hover {
@@ -328,6 +336,7 @@ div#navigation div.navigation__menu a.menu__itemsActive {
 
 div#navigation div.navigation__menuActive {
   background: #0d0d0d !important;
+  border-color: #c2c2c2;
 }
 
 div#gap {

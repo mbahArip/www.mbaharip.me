@@ -41,6 +41,13 @@
 
 		<!-- Script -->
 		<script src="https://kit.fontawesome.com/527fbb25e1.js" crossorigin="anonymous"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+		<script>
+			self.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
+		</script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app-check.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
 	</head>
 
 	<body>
@@ -52,7 +59,7 @@
 				</div>
 			</a>
 			<div class="navigation__menu font__roboto">
-				<a href="#top" class="menu__items">Top</a>
+				<a href="#top" class="menu__items opacity__0">Top</a>
 				<a href="#about" class="menu__items">About</a>
 				<a href="#works" class="menu__items">Works</a>
 				<a href="#contact" class="menu__items">Contact</a>
@@ -171,137 +178,7 @@
 			<img src="assets/images/logo_works.svg" alt="works" class="works__logo" />
 			<div class="works__post font__roboto">
 				<span class="post__recent style__bolder"> Recent works </span>
-				<div class="post__grid">
-					<a href="posts?id=1" class="grid__post">
-						<div class="post__thumb">
-							<img src="assets/images/J2U5411s14-1024x676.jpg" alt="" class="thumb__image" />
-							<div class="post__category">
-								<div class="category__title">3D Models</div>
-							</div>
-						</div>
-						<div class="post__details">
-							<span class="details__title style__w900 font__shippori">S14 Wonder Glare</span>
-							<span class="details__description"
-								>Disini harusnya deskripsi, tapi gw ga tau harus nulis apa. Tapi karena disini butuh
-								sesuatu untuk di isi, jadi yah bodo amat lah.</span
-							>
-							<div class="details__extra">
-								<span class="extra__status"
-									><i class="fas fa-dollar-sign color__whiteInactive"></i
-								></span>
-								<span class="extra__date">20 Jan 2021</span>
-							</div>
-						</div>
-					</a>
-
-					<a href="posts?id=1" class="grid__post">
-						<div class="post__thumb">
-							<img src="assets/images/J2U5411s14-1024x676.jpg" alt="" class="thumb__image" />
-							<div class="post__category">
-								<div class="category__title">3D Models</div>
-							</div>
-						</div>
-						<div class="post__details">
-							<span class="details__title style__w900 font__shippori">S14 Wonder Glare</span>
-							<span class="details__description"
-								>Disini harusnya deskripsi, tapi gw ga tau harus nulis apa. Tapi karena disini butuh
-								sesuatu untuk di isi, jadi yah bodo amat lah.</span
-							>
-							<div class="details__extra">
-								<span class="extra__status"><i class="fas fa-download color__whiteInactive"></i></span>
-								<span class="extra__date">20 Jan 2021</span>
-							</div>
-						</div>
-					</a>
-
-					<a href="posts?id=1" class="grid__post">
-						<div class="post__thumb">
-							<img src="assets/images/J2U5411s14-1024x676.jpg" alt="" class="thumb__image" />
-							<div class="post__category">
-								<div class="category__title">3D Models</div>
-							</div>
-						</div>
-						<div class="post__details">
-							<span class="details__title style__w900 font__shippori">S14 Wonder Glare</span>
-							<span class="details__description"
-								>Disini harusnya deskripsi, tapi gw ga tau harus nulis apa. Tapi karena disini butuh
-								sesuatu untuk di isi, jadi yah bodo amat lah.</span
-							>
-							<div class="details__extra">
-								<span class="extra__status"
-									><i class="fas fa-globe-asia color__whiteInactive"></i
-								></span>
-								<span class="extra__date">20 Jan 2021</span>
-							</div>
-						</div>
-					</a>
-
-					<a href="posts?id=1" class="grid__post">
-						<div class="post__thumb">
-							<img src="assets/images/J2U5411s14-1024x676.jpg" alt="" class="thumb__image" />
-							<div class="post__category">
-								<div class="category__title">3D Models</div>
-							</div>
-						</div>
-						<div class="post__details">
-							<span class="details__title style__w900 font__shippori">S14 Wonder Glare</span>
-							<span class="details__description"
-								>Disini harusnya deskripsi, tapi gw ga tau harus nulis apa. Tapi karena disini butuh
-								sesuatu untuk di isi, jadi yah bodo amat lah.</span
-							>
-							<div class="details__extra">
-								<span class="extra__status"
-									><i class="fas fa-dollar-sign color__whiteInactive"></i
-								></span>
-								<span class="extra__date">20 Jan 2021</span>
-							</div>
-						</div>
-					</a>
-
-					<a href="posts?id=1" class="grid__post">
-						<div class="post__thumb">
-							<img src="assets/images/J2U5411s14-1024x676.jpg" alt="" class="thumb__image" />
-							<div class="post__category">
-								<div class="category__title">3D Models</div>
-							</div>
-						</div>
-						<div class="post__details">
-							<span class="details__title style__w900 font__shippori">S14 Wonder Glare</span>
-							<span class="details__description"
-								>Disini harusnya deskripsi, tapi gw ga tau harus nulis apa. Tapi karena disini butuh
-								sesuatu untuk di isi, jadi yah bodo amat lah.</span
-							>
-							<div class="details__extra">
-								<span class="extra__status"
-									><i class="fas fa-dollar-sign color__whiteInactive"></i
-								></span>
-								<span class="extra__date">20 Jan 2021</span>
-							</div>
-						</div>
-					</a>
-
-					<a href="posts?id=1" class="grid__post">
-						<div class="post__thumb">
-							<img src="assets/images/J2U5411s14-1024x676.jpg" alt="" class="thumb__image" />
-							<div class="post__category">
-								<div class="category__title">3D Models</div>
-							</div>
-						</div>
-						<div class="post__details">
-							<span class="details__title style__w900 font__shippori">S14 Wonder Glare</span>
-							<span class="details__description"
-								>Disini harusnya deskripsi, tapi gw ga tau harus nulis apa. Tapi karena disini butuh
-								sesuatu untuk di isi, jadi yah bodo amat lah.</span
-							>
-							<div class="details__extra">
-								<span class="extra__status"
-									><i class="fas fa-dollar-sign color__whiteInactive"></i
-								></span>
-								<span class="extra__date">20 Jan 2021</span>
-							</div>
-						</div>
-					</a>
-				</div>
+				<div class="post__grid"></div>
 				<div class="post__more">
 					<div class="more__title style__bolder">See more</div>
 					<a href="gallery.html" class="more__gallery">
@@ -342,5 +219,7 @@
 				</div>
 			</div>
 		</section>
+
+		<script src="assets/js/app.js"></script>
 	</body>
 </html>

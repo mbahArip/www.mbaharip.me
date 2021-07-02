@@ -19,6 +19,7 @@ $RECYCLE.BIN/
 *.css.map
 *.php
 .htaccess
+admin.html
 
 ### Archieve ###
 *.rar
