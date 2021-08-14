@@ -1,225 +1,412 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<!-- Primary Meta Tags -->
-		<title>Homepage :: mbahArip</title>
-		<meta name="title" content="Homepage :: mbahArip" />
-		<meta name="description" content="Personal website of mbahArip" />
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
 
-		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://www.mbaharip.me/" />
-		<meta property="og:title" content="Homepage :: mbahArip" />
-		<meta property="og:description" content="Personal website of mbahArip" />
-		<meta property="og:image" content="assets/metaImage.png" />
+<head>
+    <!-- Primary Meta Tags -->
+    <title>Homepage :: mbahArip</title>
+    <meta name="title" content="Homepage :: mbahArip" />
+    <meta name="description" content="Personal website of mbahArip" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
 
-		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content="https://www.mbaharip.me/" />
-		<meta property="twitter:title" content="Homepage :: mbahArip" />
-		<meta property="twitter:description" content="Personal website of mbahArip" />
-		<meta property="twitter:image" content="assets/metaImage.png" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.mbaharip.me/" />
+    <meta property="og:title" content="Homepage :: mbahArip" />
+    <meta property="og:description" content="Personal website of mbahArip" />
+    <meta property="og:image" content="assets/images/og-image.png" />
 
-		<!-- Style -->
-		<link rel="stylesheet" href="assets/style/mbaharip.css" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.mbaharip.me/" />
+    <meta property="twitter:title" content="Homepage :: mbahArip" />
+    <meta property="twitter:description" content="Personal website of mbahArip" />
+    <meta property="twitter:image" content="assets/images/og-image.png" />
 
-		<!-- Web Fonts -->
-		<link rel="preconnect" href="https://fonts.gstatic.com" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&display=swap"
-			rel="stylesheet"
-		/>
+    <!-- Style -->
+    <link rel="stylesheet" href="assets/style/mbaharip-v2.css" />
 
-		<!-- Script -->
-		<script src="https://kit.fontawesome.com/527fbb25e1.js" crossorigin="anonymous"></script>
-		<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
-		<script>
-			self.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
-		</script>
-		<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app-check.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
-	</head>
+    <!-- Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
 
-	<body>
-		<div id="navigation">
-			<a href="#header" class="navigation__top font__roboto display__none">
-				<div class="top__center">
-					<i class="fas fa-chevron-up color__dark"></i>
-					TOP
-				</div>
-			</a>
-			<div class="navigation__menu font__roboto">
-				<a href="#top" class="menu__items opacity__0">Top</a>
-				<a href="#about" class="menu__items">About</a>
-				<a href="#works" class="menu__items">Works</a>
-				<a href="#contact" class="menu__items">Contact</a>
-			</div>
-		</div>
+    <!-- Script -->
+    <script src="https://kit.fontawesome.com/527fbb25e1.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+    <script>
+        self.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
+    </script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app-check.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+</head>
 
-		<section id="header">
-			<div class="header__main font__roboto">
-				<div class="main__logo">
-					<img src="assets/images/logo_icon.svg" alt="logo_icon" class="logo__icon" />
-					<img src="assets/images/logo_text.svg" alt="logo_text" class="logo__text" />
-				</div>
-				<div class="main__description">
-					<span class="logo__descriptionTop style__w600">3D Works | Design Graphics | Developer</span>
-					<div class="logo__descriptionBottom">
-						<span class="descriptionBottom__first style__italic">Dream as if you will live forever</span>
-						<span class="descriptionBottom__second style__italic">Live as if you will die today</span>
-					</div>
-				</div>
-				<div class="main__social">
-					<a
-						href="https://www.facebook.com/mbahArip07/"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="social__list"
-					>
-						<i class="fab fa-facebook"></i> Arief Rachmawan
-					</a>
-					<a
-						href="https://twitter.com/mbahArip_"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="social__list"
-					>
-						<i class="fab fa-twitter"></i> @mbahArip_
-					</a>
-					<a
-						href="https://github.com/mbahArip/"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="social__list"
-					>
-						<i class="fab fa-github"></i> mbahArip
-					</a>
-					<a
-						href="https://www.instagram.com/mbaharip_/"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="social__list"
-					>
-						<i class="fab fa-instagram"></i> @mbahArip_
-					</a>
-					<a
-						href="https://discord.com/users/652155604172931102"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="social__list"
-					>
-						<i class="fab fa-discord"></i> mbahArip_#9552
-					</a>
-				</div>
-			</div>
-			<div class="header__menu font__roboto display__none">
-				<a href="#about" class="menu__link">About</a>
-				<a href="#works" class="menu__link">Works</a>
-				<a href="#contact" class="menu__link">Contact</a>
-			</div>
-		</section>
+<body>
 
-		<div id="gap" class="gap__headerabout"></div>
+    <section id="headers">
+        <div class="logo">
+            <img src="assets/images/logo_icon.svg" alt="mbahArip" class="logo__icon">
+            <img src="assets/images/logo_text.svg" alt="mbahArip" class="logo__text">
+            <div class="text">
+                <span class="text__about">3D Works // Design Graphics // Dev Wannabe</span>
+                <span class="text__quote">Dreams as if you will live forever, Live as if you will die today.</span>
+            </div>
+            <div class="social">
+                <a href="https://www.facebook.com/mbahArip07/" target="_blank" rel="noopener noreferrer"
+                    class="social__items">
+                    <i class="fab fa-facebook"></i>
+                    Arief Rachmawan
+                </a>
+                <a href="https://twitter.com/mbahArip_" target="_blank" rel="noopener noreferrer" class="social__items">
+                    <i class="fab fa-twitter"></i>
+                    @mbaharip_
+                </a>
+                <a href="https://github.com/mbahArip/" target="_blank" rel="noopener noreferrer" class="social__items">
+                    <i class="fab fa-github"></i>
+                    mbahArip
+                </a>
+                <a href="https://www.artstation.com/mbaharip" target="_blank" rel="noopener noreferrer"
+                    class="social__items">
+                    <i class="fab fa-artstation"></i>
+                    Arief Rachmawan
+                </a>
+                <a href="https://discord.com/users/652155604172931102" target="_blank" rel="noopener noreferrer"
+                    class="social__items">
+                    <i class="fab fa-discord"></i>
+                    mbahArip_#9552
+                </a>
+            </div>
+        </div>
+    </section>
 
-		<section id="about">
-			<img src="assets/images/logo_about.svg" alt="about" class="about__logo" />
-			<div class="about__about">
-				<p class="about__me font__roboto">
-					Hello, my name is Arief Rachmawan, I'm currently a student on local university, Sekolah Tinggi
-					Teknologi Bandung. <br />
-					I love doing 3D Works, Graphic Design, and creating website. <br />
-					For 3D Works, I mainly using Blender, and for Designing I mainly use Affinity Designer. <br />
-					I'm gonna post all my works here, hope you like it!
-				</p>
-				<div class="about__team font__roboto">
-					<h1>Member of</h1>
-					<div class="team__list">
-						<div class="list__details">
-							<h3>Kanoon48 Graphics</h3>
-							<span class="details__description">as Founder, Main Designer</span>
-							<div class="details__social">
-								<a
-									href="https://www.facebook.com/Kanoon48Graphics"
-									class="social__link"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<i class="fab fa-facebook"></i>
-								</a>
-							</div>
-						</div>
-						<div class="list__details">
-							<h3>Hallucinogen</h3>
-							<span class="details__description">as Livery Designer, 3D Works</span>
-							<div class="details__social">
-								<a class="social__link" target="_blank" rel="noopener noreferrer">
-									<i class="fas fa-question-circle"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <div class="gap gap-dark2gray"></div>
 
-		<div id="gap" class="gap__aboutworks"></div>
+    <section id="about">
+        <img src="assets/images/logo_about.svg" alt="" class="about__icon">
 
-		<section id="works">
-			<img src="assets/images/logo_works.svg" alt="works" class="works__logo" />
-			<div class="works__post font__roboto">
-				<span class="post__recent style__bolder"> Recent works </span>
-				<div class="post__grid"></div>
-				<div class="post__more">
-					<div class="more__title style__bolder">See more</div>
-					<a href="gallery.html" class="more__gallery">
-						<button class="gallery_button btn__white style__bold">Go to Gallery Page ></button>
-					</a>
-				</div>
-			</div>
-		</section>
+        <div class="about__me">
+            <p>
+                <span class="hello">Hello!</span> <br>
+                My name is <span>Arief Rachmawan</span>, I'm currently a student at local university. <br>
+                I love doing 3D Works, Graphic Design, and Creating website. <br>
+                I'm going to post all my works here, hope you like it!
+            </p>
+        </div>
+        <div class="about__org">
+            <span class="org__head">Current Organization</span>
+            <ul class="org__list">
+                <li class="org__items">
+                    <span class="org__name">Lorem ipsum dolor sit amet.</span>
+                    <p class="org__desc">
+                        Lorem ipsum dolor sit amet. <br>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, commodi? <br>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    </p>
+                    <div class="org__social">
+                        <a href="#" class="social__items">
+                            <i class="fab fa-facebook"></i>
+                            Facebook Pages
+                        </a>
+                        <a href="#" class="social__items">
+                            <i class="fas fa-globe"></i>
+                            Website
+                        </a>
+                    </div>
+                </li>
+                <li class="org__items">
+                    <span class="org__name">Lorem ipsum dolor sit amet.</span>
+                    <p class="org__desc">
+                        Lorem ipsum dolor sit amet. <br>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, commodi? <br>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    </p>
+                    <div class="org__social">
+                        <a href="#" class="social__items">
+                            <i class="fab fa-facebook"></i>
+                            Facebook Pages
+                        </a>
+                        <a href="#" class="social__items">
+                            <i class="fas fa-globe"></i>
+                            Website
+                        </a>
+                    </div>
+                </li>
+                <li class="org__items">
+                    <span class="org__name">Lorem ipsum dolor sit amet.</span>
+                    <p class="org__desc">
+                        Lorem ipsum dolor sit amet. <br>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, commodi? <br>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    </p>
+                    <div class="org__social">
+                        <a href="#" class="social__items">
+                            <i class="fab fa-facebook"></i>
+                            Facebook Pages
+                        </a>
+                        <a href="#" class="social__items">
+                            <i class="fas fa-globe"></i>
+                            Website
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
 
-		<div id="gap" class="gap__workscontact"></div>
+    <div class="gap gap-gray-tris-botleft"></div>
 
-		<section id="contact">
-			<img src="assets/images/logo_contact.svg" alt="contact" class="contact__logo" />
-			<div class="contact__wrapper font__roboto">
-				<span class="contact__infoTop style__bold"> For works or any question, feel free to contact me! </span>
-				<span class="contact__infoBottom style__italic"> Please use clear and simple subject. </span>
+    <section id="works">
+        <img src="assets/images/logo_works.svg" alt="" class="works__icon">
 
-				<a href="mailto:support@mbaharip.me" class="contact__email">
-					<button class="email__button btn__dark style__bold">Send me an email</button>
-				</a>
+        <p class="works__about">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit animi aperiam pariatur alias maxime
+            eaque, vel dolor vitae ducimus magni earum aliquam ad rerum natus.
+        </p>
 
-				<div class="contact__social display__none">
-					<a href="http://" target="_blank" rel="noopener noreferrer" class="social__list">
-						<i class="fab fa-facebook"></i> mbahArip
-					</a>
+        <div class="works__list">
+            <div class="works__items">
+                <div class="img__sample">
+                    <img src="assets/images/img-failed.png" alt="" class="big">
+                    <div class="img_small">
+                        <img src="assets/images/img-failed.png" alt="" class="small">
+                        <img src="assets/images/img-failed.png" alt="" class="small">
+                        <img src="assets/images/img-failed.png" alt="" class="small">
+                    </div>
+                </div>
+                <span class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, impedit.</span>
+                <span class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae sit cum sint non
+                    ex officiis aspernatur, minima enim qui, magni labore quae, voluptatem repudiandae
+                    tempore.</span>
+            </div>
+            <div class="works__items">
+                <div class="img__sample">
+                    <img src="assets/images/img-failed.png" alt="" class="big">
+                    <div class="img_small">
+                        <img src="assets/images/img-failed.png" alt="" class="small">
+                        <img src="assets/images/img-failed.png" alt="" class="small">
+                        <img src="assets/images/img-failed.png" alt="" class="small">
+                    </div>
+                </div>
+                <span class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, impedit.</span>
+                <span class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae sit cum sint non
+                    ex officiis aspernatur, minima enim qui, magni labore quae, voluptatem repudiandae
+                    tempore.</span>
+            </div>
+            <div class="works__items">
+                <div class="img__sample">
+                    <img src="assets/images/img-failed.png" alt="" class="big">
+                    <div class="img_small">
+                        <img src="assets/images/img-failed.png" alt="" class="small">
+                        <img src="assets/images/img-failed.png" alt="" class="small">
+                        <img src="assets/images/img-failed.png" alt="" class="small">
+                    </div>
+                </div>
+                <span class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, impedit.</span>
+                <span class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae sit cum sint non
+                    ex officiis aspernatur, minima enim qui, magni labore quae, voluptatem repudiandae
+                    tempore.</span>
+            </div>
+        </div>
+    </section>
 
-					<a href="http://" target="_blank" rel="noopener noreferrer" class="social__list">
-						<i class="fab fa-twitter"></i> @mbahArip_
-					</a>
+    <div class="gap gap-light-tris-botright bg-gray"></div>
 
-					<a href="http://" target="_blank" rel="noopener noreferrer" class="social__list">
-						<i class="fab fa-instagram"></i> @arief.rachmawan07
-					</a>
+    <section id="gallery">
+        <img src="assets/images/logo_gallery.svg" alt="" class="gallery__icon">
 
-					<a href="http://" target="_blank" rel="noopener noreferrer" class="social__list">
-						<i class="fab fa-discord"></i> mbahArip_#9552
-					</a>
-				</div>
-			</div>
-		</section>
+        <div class="container">
+            <a href="#" class="gallery__items">
+                <img src="assets/images/img-failed.png" alt="" class="thumb">
+                <div class="info">
+                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
+                        error.</span>
+                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
+                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
+                        esse!</span>
+                    <div class="details">
+                        <span class="category">Category</span>
+                        <span class="date">00-00-0000</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="gallery__items">
+                <img src="assets/images/img-failed.png" alt="" class="thumb">
+                <div class="info">
+                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
+                        error.</span>
+                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
+                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
+                        esse!</span>
+                    <div class="details">
+                        <span class="category">Category</span>
+                        <span class="date">00-00-0000</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="gallery__items">
+                <img src="assets/images/img-failed.png" alt="" class="thumb">
+                <div class="info">
+                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
+                        error.</span>
+                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
+                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
+                        esse!</span>
+                    <div class="details">
+                        <span class="category">Category</span>
+                        <span class="date">00-00-0000</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="gallery__items">
+                <img src="assets/images/img-failed.png" alt="" class="thumb">
+                <div class="info">
+                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
+                        error.</span>
+                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
+                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
+                        esse!</span>
+                    <div class="details">
+                        <span class="category">Category</span>
+                        <span class="date">00-00-0000</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="gallery__items">
+                <img src="assets/images/img-failed.png" alt="" class="thumb">
+                <div class="info">
+                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
+                        error.</span>
+                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
+                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
+                        esse!</span>
+                    <div class="details">
+                        <span class="category">Category</span>
+                        <span class="date">00-00-0000</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="gallery__items">
+                <img src="assets/images/img-failed.png" alt="" class="thumb">
+                <div class="info">
+                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
+                        error.</span>
+                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
+                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
+                        esse!</span>
+                    <div class="details">
+                        <span class="category">Category</span>
+                        <span class="date">00-00-0000</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="gallery__items">
+                <img src="assets/images/img-failed.png" alt="" class="thumb">
+                <div class="info">
+                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
+                        error.</span>
+                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
+                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
+                        esse!</span>
+                    <div class="details">
+                        <span class="category">Category</span>
+                        <span class="date">00-00-0000</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="gallery__items">
+                <img src="assets/images/img-failed.png" alt="" class="thumb">
+                <div class="info">
+                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
+                        error.</span>
+                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
+                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
+                        esse!</span>
+                    <div class="details">
+                        <span class="category">Category</span>
+                        <span class="date">00-00-0000</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="gallery__items">
+                <img src="assets/images/img-failed.png" alt="" class="thumb">
+                <div class="info">
+                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
+                        error.</span>
+                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
+                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
+                        esse!</span>
+                    <div class="details">
+                        <span class="category">Category</span>
+                        <span class="date">00-00-0000</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="gallery__items">
+                <img src="assets/images/img-failed.png" alt="" class="thumb">
+                <div class="info">
+                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
+                        error.</span>
+                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
+                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
+                        esse!</span>
+                    <div class="details">
+                        <span class="category">Category</span>
+                        <span class="date">00-00-0000</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="gallery__items">
+                <img src="assets/images/img-failed.png" alt="" class="thumb">
+                <div class="info">
+                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
+                        error.</span>
+                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
+                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
+                        esse!</span>
+                    <div class="details">
+                        <span class="category">Category</span>
+                        <span class="date">00-00-0000</span>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="gallery__items">
+                <img src="assets/images/img-failed.png" alt="" class="thumb">
+                <div class="info">
+                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
+                        error.</span>
+                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
+                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
+                        esse!</span>
+                    <div class="details">
+                        <span class="category">Category</span>
+                        <span class="date">00-00-0000</span>
+                    </div>
+                </div>
+            </a>
+        </div>
 
-		<script src="assets/js/app.js"></script>
-	</body>
+        <a href="/gallery.html" class="seeMore button">See More ></a>
+    </section>
+
+    <div class="gap gap-dark-tris-bottom bg-white"></div>
+
+    <section id="contact">
+        <img src="assets/images/logo_contact.svg" alt="" class="contact__icon">
+
+        <p class="contact__email">
+            <span>For works or any question, feel free to contact me!</span><br>
+            Please use clear and simple subject.
+        </p>
+
+        <a href="mailto:support@mbaharip.me" class="mail button">Contact me via email</a>
+    </section>
+</body>
+
 </html>
