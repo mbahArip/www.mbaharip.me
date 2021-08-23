@@ -48,7 +48,15 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
 </head>
 
-<body>
+<body onload="home__init();">
+    <section id="modal">
+        <div class="modal_image modal">
+            <img src="https://files.mbaharip.me/0:/sample/redraw-triadprimus.jpg">
+            <button class="close" onclick="_main.closeModal()">
+                <img src="assets/images/icon_close.svg">
+            </button>
+        </div>
+    </section>
 
     <section id="headers">
         <div class="logo">
@@ -92,7 +100,7 @@
         <img src="assets/images/logo_about.svg" alt="" class="about__icon">
 
         <div class="about__me">
-            <p>
+            <p class="about">
                 <span class="hello">Hello!</span> <br>
                 My name is <span>Arief Rachmawan</span>, I'm currently a student at local university. <br>
                 I love doing 3D Works, Graphic Design, and Creating website. <br>
@@ -103,57 +111,42 @@
             <span class="org__head">Current Organization</span>
             <ul class="org__list">
                 <li class="org__items">
-                    <span class="org__name">Lorem ipsum dolor sit amet.</span>
+                    <span class="org__name">Kanoon48 Graphics</span>
                     <p class="org__desc">
-                        Lorem ipsum dolor sit amet. <br>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, commodi? <br>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Start as where I share my GTA SA mods, and then now used for sharing my itasha design.
                     </p>
                     <div class="org__social">
-                        <a href="#" class="social__items">
+                        <a href="https://www.facebook.com/Kanoon48Graphics" target="_blank" rel="noopener noreferrer"
+                            class="social__items">
                             <i class="fab fa-facebook"></i>
                             Facebook Pages
                         </a>
-                        <a href="#" class="social__items">
+                        <!-- <a href="#" class="social__items">
                             <i class="fas fa-globe"></i>
                             Website
-                        </a>
+                        </a> -->
                     </div>
                 </li>
                 <li class="org__items">
-                    <span class="org__name">Lorem ipsum dolor sit amet.</span>
+                    <span class="org__name">Neko Alliance</span>
                     <p class="org__desc">
-                        Lorem ipsum dolor sit amet. <br>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, commodi? <br>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Designer circle that focused on Itasha wrap design.
                     </p>
                     <div class="org__social">
-                        <a href="#" class="social__items">
+                        <a href="https://www.facebook.com/NekoAllianceDesign" target="_blank" rel="noopener noreferrer"
+                            class="social__items">
                             <i class="fab fa-facebook"></i>
                             Facebook Pages
                         </a>
-                        <a href="#" class="social__items">
+                        <a href="https://www.instagram.com/nekoalliance/" target="_blank" rel="noopener noreferrer"
+                            class="social__items">
+                            <i class="fab fa-instagram"></i>
+                            Instagram
+                        </a>
+                        <!-- <a href="#" class="social__items">
                             <i class="fas fa-globe"></i>
                             Website
-                        </a>
-                    </div>
-                </li>
-                <li class="org__items">
-                    <span class="org__name">Lorem ipsum dolor sit amet.</span>
-                    <p class="org__desc">
-                        Lorem ipsum dolor sit amet. <br>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, commodi? <br>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    </p>
-                    <div class="org__social">
-                        <a href="#" class="social__items">
-                            <i class="fab fa-facebook"></i>
-                            Facebook Pages
-                        </a>
-                        <a href="#" class="social__items">
-                            <i class="fas fa-globe"></i>
-                            Website
-                        </a>
+                        </a> -->
                     </div>
                 </li>
             </ul>
@@ -162,56 +155,74 @@
 
     <div class="gap gap-gray-tris-botleft"></div>
 
-    <section id="works">
-        <img src="assets/images/logo_works.svg" alt="" class="works__icon">
+    <section id="services">
+        <img src="assets/images/logo_services.svg" alt="" class="services__icon">
 
-        <p class="works__about">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit animi aperiam pariatur alias maxime
-            eaque, vel dolor vitae ducimus magni earum aliquam ad rerum natus.
+        <p class="services__about about">
+            I'm accepting any request for 3D Works (Bodykit / Car parts), Design (Logo, Wrap Design), and Data
+            Processing. <br>
+            <span>*The client is responsible for the copyright of the images and logo requested to be edited. I'm not
+                responsible for any right issues.</span>
         </p>
 
-        <div class="works__list">
-            <div class="works__items">
+        <div class="services__list">
+            <div id="bodykit" class="services__items">
                 <div class="img__sample">
-                    <img src="assets/images/img-failed.png" alt="" class="big">
+                    <img src="https://files.mbaharip.me/0:/sample/kit-180sx-garagemak.jpg" alt="" class="big"
+                        onclick="_main.showImageModal(this)">
                     <div class="img_small">
-                        <img src="assets/images/img-failed.png" alt="" class="small">
-                        <img src="assets/images/img-failed.png" alt="" class="small">
-                        <img src="assets/images/img-failed.png" alt="" class="small">
+                        <img src="https://files.mbaharip.me/0:/sample/kit-180sx-garagemak.jpg" alt=""
+                            class="small active" onclick="_main.changeImage('bodykit', 0)">
+                        <img src="https://files.mbaharip.me/0:/sample/kit-s13-cmw.jpg" alt="" class="small"
+                            onclick="_main.changeImage('bodykit', 1)">
+                        <img src="https://files.mbaharip.me/0:/sample/kit-gt86-abflug.jpg" alt="" class="small"
+                            onclick="_main.changeImage('bodykit', 2)">
                     </div>
                 </div>
-                <span class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, impedit.</span>
-                <span class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae sit cum sint non
-                    ex officiis aspernatur, minima enim qui, magni labore quae, voluptatem repudiandae
-                    tempore.</span>
+                <span class="title">3D Works</span>
+                <span class="about">I can help you to create 3D models of your desired kits, parts, and also environment
+                    props.</span>
+                <span class="star">*I may decline your offer if the models are too complex.</span>
             </div>
-            <div class="works__items">
+            <div id="redraw" class="services__items">
                 <div class="img__sample">
-                    <img src="assets/images/img-failed.png" alt="" class="big">
+                    <img src="https://files.mbaharip.me/0:/sample/redraw-triadprimus.jpg" alt="" class="big"
+                        onclick="_main.showImageModal(this)">
                     <div class="img_small">
-                        <img src="assets/images/img-failed.png" alt="" class="small">
-                        <img src="assets/images/img-failed.png" alt="" class="small">
-                        <img src="assets/images/img-failed.png" alt="" class="small">
+                        <img src="https://files.mbaharip.me/0:/sample/redraw-triadprimus.jpg" alt=""
+                            class="small active" onclick="_main.changeImage('redraw', 0)">
+                        <img src="https://files.mbaharip.me/0:/sample/redraw-asuka.jpg" alt="" class="small"
+                            onclick="_main.changeImage('redraw', 1)">
+                        <img src="https://files.mbaharip.me/0:/sample/redraw-ryuuko.jpg" alt="" class="small"
+                            onclick="_main.changeImage('redraw', 2)">
                     </div>
                 </div>
-                <span class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, impedit.</span>
-                <span class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae sit cum sint non
-                    ex officiis aspernatur, minima enim qui, magni labore quae, voluptatem repudiandae
-                    tempore.</span>
+                <span class="title">Image Redraw</span>
+                <span class="about">I can help you to redraw the logo or character you want, so you don't need to worry
+                    about pixelation when printing. <br>
+                    I usually redraw it up to 10k pixels 300dpi. <br>
+                    I recommend to redraw the material for your wrap design, for better result with no pixelation on
+                    final result.
+                </span>
+                <span class="star">*I may decline your offer if the source images are too small or complex.</span>
             </div>
-            <div class="works__items">
+            <div id="design" class="services__items">
                 <div class="img__sample">
-                    <img src="assets/images/img-failed.png" alt="" class="big">
+                    <img src="https://files.mbaharip.me/0:/sample/livery-yukina.jpg" alt="" class="big"
+                        onclick="_main.showImageModal(this)">
                     <div class="img_small">
-                        <img src="assets/images/img-failed.png" alt="" class="small">
-                        <img src="assets/images/img-failed.png" alt="" class="small">
-                        <img src="assets/images/img-failed.png" alt="" class="small">
+                        <img src="https://files.mbaharip.me/0:/sample/livery-yukina.jpg" alt="" class="small active"
+                            onclick="_main.changeImage('design', 0)">
+                        <img src="https://files.mbaharip.me/0:/sample/livery-rize.jpg" alt="" class="small"
+                            onclick="_main.changeImage('design', 1)">
+                        <img src="https://files.mbaharip.me/0:/sample/livery-marisa.jpg" alt="" class="small"
+                            onclick="_main.changeImage('design', 2)">
                     </div>
                 </div>
-                <span class="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt, impedit.</span>
-                <span class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae sit cum sint non
-                    ex officiis aspernatur, minima enim qui, magni labore quae, voluptatem repudiandae
-                    tempore.</span>
+                <span class="title">Design</span>
+                <span class="about">I can help you to create your dream design. <br>
+                    Wether it's for your car wrap, PC case wrap, Logo, or anything.</span>
+                <span class="star">*I may decline your offer if the request are too complex.</span>
             </div>
         </div>
     </section>
@@ -219,10 +230,10 @@
     <div class="gap gap-light-tris-botright bg-gray"></div>
 
     <section id="gallery">
-        <img src="assets/images/logo_gallery.svg" alt="" class="gallery__icon">
+        <img src="assets/images/logo_works.svg" alt="" class="gallery__icon">
 
         <div class="container">
-            <a href="#" class="gallery__items">
+            <!-- <a href="#" class="gallery__items">
                 <img src="assets/images/img-failed.png" alt="" class="thumb">
                 <div class="info">
                     <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
@@ -235,164 +246,10 @@
                         <span class="date">00-00-0000</span>
                     </div>
                 </div>
-            </a>
-            <a href="#" class="gallery__items">
-                <img src="assets/images/img-failed.png" alt="" class="thumb">
-                <div class="info">
-                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
-                        error.</span>
-                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
-                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
-                        esse!</span>
-                    <div class="details">
-                        <span class="category">Category</span>
-                        <span class="date">00-00-0000</span>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="gallery__items">
-                <img src="assets/images/img-failed.png" alt="" class="thumb">
-                <div class="info">
-                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
-                        error.</span>
-                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
-                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
-                        esse!</span>
-                    <div class="details">
-                        <span class="category">Category</span>
-                        <span class="date">00-00-0000</span>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="gallery__items">
-                <img src="assets/images/img-failed.png" alt="" class="thumb">
-                <div class="info">
-                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
-                        error.</span>
-                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
-                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
-                        esse!</span>
-                    <div class="details">
-                        <span class="category">Category</span>
-                        <span class="date">00-00-0000</span>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="gallery__items">
-                <img src="assets/images/img-failed.png" alt="" class="thumb">
-                <div class="info">
-                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
-                        error.</span>
-                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
-                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
-                        esse!</span>
-                    <div class="details">
-                        <span class="category">Category</span>
-                        <span class="date">00-00-0000</span>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="gallery__items">
-                <img src="assets/images/img-failed.png" alt="" class="thumb">
-                <div class="info">
-                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
-                        error.</span>
-                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
-                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
-                        esse!</span>
-                    <div class="details">
-                        <span class="category">Category</span>
-                        <span class="date">00-00-0000</span>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="gallery__items">
-                <img src="assets/images/img-failed.png" alt="" class="thumb">
-                <div class="info">
-                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
-                        error.</span>
-                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
-                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
-                        esse!</span>
-                    <div class="details">
-                        <span class="category">Category</span>
-                        <span class="date">00-00-0000</span>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="gallery__items">
-                <img src="assets/images/img-failed.png" alt="" class="thumb">
-                <div class="info">
-                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
-                        error.</span>
-                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
-                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
-                        esse!</span>
-                    <div class="details">
-                        <span class="category">Category</span>
-                        <span class="date">00-00-0000</span>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="gallery__items">
-                <img src="assets/images/img-failed.png" alt="" class="thumb">
-                <div class="info">
-                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
-                        error.</span>
-                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
-                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
-                        esse!</span>
-                    <div class="details">
-                        <span class="category">Category</span>
-                        <span class="date">00-00-0000</span>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="gallery__items">
-                <img src="assets/images/img-failed.png" alt="" class="thumb">
-                <div class="info">
-                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
-                        error.</span>
-                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
-                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
-                        esse!</span>
-                    <div class="details">
-                        <span class="category">Category</span>
-                        <span class="date">00-00-0000</span>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="gallery__items">
-                <img src="assets/images/img-failed.png" alt="" class="thumb">
-                <div class="info">
-                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
-                        error.</span>
-                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
-                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
-                        esse!</span>
-                    <div class="details">
-                        <span class="category">Category</span>
-                        <span class="date">00-00-0000</span>
-                    </div>
-                </div>
-            </a>
-            <a href="#" class="gallery__items">
-                <img src="assets/images/img-failed.png" alt="" class="thumb">
-                <div class="info">
-                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
-                        error.</span>
-                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
-                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
-                        esse!</span>
-                    <div class="details">
-                        <span class="category">Category</span>
-                        <span class="date">00-00-0000</span>
-                    </div>
-                </div>
-            </a>
+            </a> -->
         </div>
 
-        <a href="/gallery.html" class="seeMore button">See More ></a>
+        <a href="/works" class="seeMore button">See More ></a>
     </section>
 
     <div class="gap gap-dark-tris-bottom bg-white"></div>
@@ -407,6 +264,12 @@
 
         <a href="mailto:support@mbaharip.me" class="mail button">Contact me via email</a>
     </section>
+
+    <footer>
+        <span class="footer">2021 - mbahArip</span>
+    </footer>
 </body>
+<script src="assets/js/func.js"></script>
+<script src="assets/js/app.js"></script>
 
 </html>

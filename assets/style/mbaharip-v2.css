@@ -13,6 +13,18 @@ body {
   overflow-x: hidden;
 }
 
+body footer {
+  width: 100vw;
+  height: 2rem;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+body p.about {
+  font-size: 2rem !important;
+}
+
 body::-webkit-scrollbar {
   width: .5rem;
 }
@@ -42,8 +54,10 @@ a.button {
   display: -ms-grid;
   display: grid;
   place-items: center;
-  height: 5rem;
-  font-size: 2.5rem;
+  min-width: 50vw;
+  max-width: 80vw;
+  height: 4rem;
+  font-size: 2rem;
   font-weight: bold;
   border: 2px solid;
   margin: 2rem auto;
@@ -134,6 +148,53 @@ a.button {
 
 div.gap {
   height: 25vh;
+}
+
+section#modal {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(13, 13, 13, 0.9);
+  display: none;
+  opacity: 0;
+  position: fixed;
+  z-index: 100;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+section#modal div.modal_image {
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+section#modal div.modal_image img {
+  height: 95vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+section#modal div.modal_image button.close {
+  background: none;
+  border: none;
+  color: #f2f2f2;
+  position: absolute;
+  top: 5vh;
+  right: 5vw;
+  cursor: pointer;
+}
+
+section#modal div.modal_image button.close img {
+  width: 3rem;
+  height: 3rem;
+  -webkit-filter: invert(1) brightness(2);
+          filter: invert(1) brightness(2);
 }
 
 section#headers {
@@ -254,7 +315,7 @@ section#about {
 }
 
 section#about img.about__icon {
-  height: 12.5vh;
+  height: 10vh;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -385,7 +446,7 @@ section#about div.about__org ul.org__list li.org__items div.org__social a.social
   color: #f2f2f2;
 }
 
-section#works {
+section#services {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -405,24 +466,26 @@ section#works {
   padding: 5rem;
 }
 
-section#works img.works__icon {
-  height: 12.5vh;
+section#services img.services__icon {
+  height: 10vh;
   -o-object-fit: contain;
      object-fit: contain;
+  position: relative;
 }
 
-section#works p.works__about {
+section#services p.services__about {
   max-width: 75%;
-  font-size: 2rem;
+  font-size: 1.75rem;
   margin: 5rem auto;
   text-align: center;
 }
 
-section#works p.works__about span {
+section#services p.services__about span {
+  font-size: 1rem;
   font-weight: bold;
 }
 
-section#works div.works__list {
+section#services div.services__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -435,7 +498,7 @@ section#works div.works__list {
   margin: auto;
 }
 
-section#works div.works__list div.works__items {
+section#services div.services__list div.services__items {
   width: 25vw;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -451,7 +514,7 @@ section#works div.works__list div.works__items {
   gap: .5rem;
 }
 
-section#works div.works__list div.works__items div.img__sample {
+section#services div.services__list div.services__items div.img__sample {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -461,39 +524,61 @@ section#works div.works__list div.works__items div.img__sample {
       -ms-flex-direction: column;
           flex-direction: column;
   overflow: hidden;
+  gap: .25rem;
 }
 
-section#works div.works__list div.works__items div.img__sample img.big {
+section#services div.services__list div.services__items div.img__sample img.big {
   width: 100%;
   height: 15rem;
   -o-object-fit: cover;
      object-fit: cover;
+  cursor: pointer;
+  -webkit-transition: opacity .25s;
+  transition: opacity .25s;
 }
 
-section#works div.works__list div.works__items div.img__sample div.img_small {
+section#services div.services__list div.services__items div.img__sample div.img_small {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 0;
+  gap: .25rem;
 }
 
-section#works div.works__list div.works__items div.img__sample div.img_small img.small {
+section#services div.services__list div.services__items div.img__sample div.img_small img.small {
   width: calc(100% / 3);
   height: 5rem;
   -o-object-fit: cover;
      object-fit: cover;
   overflow: hidden;
+  cursor: pointer;
+  opacity: 0.25;
+  -webkit-transition: opacity .25s;
+  transition: opacity .25s;
 }
 
-section#works div.works__list div.works__items span.title {
-  font-size: 1.5rem;
+section#services div.services__list div.services__items div.img__sample div.img_small img.active {
+  opacity: 1;
+  cursor: default;
+}
+
+section#services div.services__list div.services__items span.title {
+  font-size: 2rem;
   font-weight: bold;
+  text-align: center;
+  margin: 2rem auto;
+}
+
+section#services div.services__list div.services__items span.about {
+  font-size: 1.25rem;
   text-align: center;
 }
 
-section#works div.works__list div.works__items span.about {
-  margin: 2rem 1rem;
+section#services div.services__list div.services__items span.star {
+  margin: 2rem auto;
+  text-align: center;
+  font-style: italic;
+  font-size: 0.9rem;
 }
 
 section#gallery {
@@ -517,7 +602,7 @@ section#gallery {
 }
 
 section#gallery img.gallery__icon {
-  height: 12.5vh;
+  height: 10vh;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -654,7 +739,7 @@ section#contact {
 }
 
 section#contact img.contact__icon {
-  height: 12.5vh;
+  height: 10vh;
   -o-object-fit: contain;
      object-fit: contain;
 }
