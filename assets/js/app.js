@@ -18,4 +18,6 @@ async function home__init() {
 
 async function works__init() {
     global__init();
+    _utility.imageLoad();
+    _utility.footer();
 }
