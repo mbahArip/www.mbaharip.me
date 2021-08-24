@@ -16,7 +16,6 @@ $RECYCLE.BIN/
 
 ### Web Files ###
 *.scss
-*.css.map
 *.php
 .htaccess
 admin.html
