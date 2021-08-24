@@ -1,4 +1,11 @@
-//New
+var DEBUG = true;
+if (!DEBUG) {
+	if (!window.console) window.console = {};
+	var methods = ["log", "debug", "warn", "info"];
+	for (var i = 0; i < methods.length; i++) {
+		console[methods[i]] = function () {};
+	}
+}
 
 class googleFirebase {
 	constructor() {
@@ -90,7 +97,7 @@ class googleFirebase {
 	}
 }
 
-class main {
+class index {
 	imageLoad() {
 		let img = document.querySelectorAll('img');
 
@@ -129,17 +136,15 @@ class main {
 		big.style.opacity = 1
 		big.src = element[index].src;
 	}
-	autoChangeImage(parent) {
-		let index = 0;
-		setInterval(() => {
-			if (index == 3) {
-				index = 0;
-			}
-			this.changeImage(parent, index);
-			index++;
-		}, 7500)
-	}
 
+	async showImageModal(element) {
+		document.querySelector('div.modal_image img').src = element.src.split('.jpg')[0] + '-hi.jpg';
+		document.querySelector('div.modal_image').style.display = 'flex';
+		await _modal.showModal();
+	}
+}
+
+class modal {
 	async showModal() {
 		let modalContainer = document.querySelector('section#modal');
 		modalContainer.style.display = 'flex';
@@ -151,11 +156,6 @@ class main {
 		modalContainer.style.opacity = 0;
 		await _utility.sleep(500);
 		modalContainer.style.display = 'none';
-	}
-	async showImageModal(element) {
-		document.querySelector('div.modal_image img').src = element.src.split('.jpg')[0] + '-hi.jpg';
-		document.querySelector('div.modal_image').style.display = 'flex';
-		await this.showModal();
 	}
 }
 

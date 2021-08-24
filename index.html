@@ -52,7 +52,7 @@
     <section id="modal">
         <div class="modal_image modal">
             <img src="https://files.mbaharip.me/0:/sample/redraw-triadprimus.jpg">
-            <button class="close" onclick="_main.closeModal()">
+            <button class="close" onclick="_modal.closeModal()">
                 <img src="assets/images/icon_close.svg">
             </button>
         </div>
@@ -108,7 +108,7 @@
             </p>
         </div>
         <div class="about__org">
-            <span class="org__head">Current Organization</span>
+            <span class="org__head">Member of</span>
             <ul class="org__list">
                 <li class="org__items">
                     <span class="org__name">Kanoon48 Graphics</span>
@@ -159,8 +159,8 @@
         <img src="assets/images/logo_services.svg" alt="" class="services__icon">
 
         <p class="services__about about">
-            I'm accepting any request for 3D Works (Bodykit / Car parts), Design (Logo, Wrap Design), and Data
-            Processing. <br>
+            I'm accepting any request for 3D Works, Data Redraw, or Design .
+            <br>
             <span>*The client is responsible for the copyright of the images and logo requested to be edited. I'm not
                 responsible for any right issues.</span>
         </p>
@@ -169,14 +169,14 @@
             <div id="bodykit" class="services__items">
                 <div class="img__sample">
                     <img src="https://files.mbaharip.me/0:/sample/kit-180sx-garagemak.jpg" alt="" class="big"
-                        onclick="_main.showImageModal(this)">
+                        onclick="_index.showImageModal(this)">
                     <div class="img_small">
                         <img src="https://files.mbaharip.me/0:/sample/kit-180sx-garagemak.jpg" alt=""
-                            class="small active" onclick="_main.changeImage('bodykit', 0)">
+                            class="small active" onclick="_index.changeImage('bodykit', 0)">
                         <img src="https://files.mbaharip.me/0:/sample/kit-s13-cmw.jpg" alt="" class="small"
-                            onclick="_main.changeImage('bodykit', 1)">
+                            onclick="_index.changeImage('bodykit', 1)">
                         <img src="https://files.mbaharip.me/0:/sample/kit-gt86-abflug.jpg" alt="" class="small"
-                            onclick="_main.changeImage('bodykit', 2)">
+                            onclick="_index.changeImage('bodykit', 2)">
                     </div>
                 </div>
                 <span class="title">3D Works</span>
@@ -187,17 +187,17 @@
             <div id="redraw" class="services__items">
                 <div class="img__sample">
                     <img src="https://files.mbaharip.me/0:/sample/redraw-triadprimus.jpg" alt="" class="big"
-                        onclick="_main.showImageModal(this)">
+                        onclick="_index.showImageModal(this)">
                     <div class="img_small">
                         <img src="https://files.mbaharip.me/0:/sample/redraw-triadprimus.jpg" alt=""
-                            class="small active" onclick="_main.changeImage('redraw', 0)">
+                            class="small active" onclick="_index.changeImage('redraw', 0)">
                         <img src="https://files.mbaharip.me/0:/sample/redraw-asuka.jpg" alt="" class="small"
-                            onclick="_main.changeImage('redraw', 1)">
+                            onclick="_index.changeImage('redraw', 1)">
                         <img src="https://files.mbaharip.me/0:/sample/redraw-ryuuko.jpg" alt="" class="small"
-                            onclick="_main.changeImage('redraw', 2)">
+                            onclick="_index.changeImage('redraw', 2)">
                     </div>
                 </div>
-                <span class="title">Image Redraw</span>
+                <span class="title">Data Redraw</span>
                 <span class="about">I can help you to redraw the logo or character you want, so you don't need to worry
                     about pixelation when printing. <br>
                     I usually redraw it up to 10k pixels 300dpi. <br>
@@ -209,14 +209,14 @@
             <div id="design" class="services__items">
                 <div class="img__sample">
                     <img src="https://files.mbaharip.me/0:/sample/livery-yukina.jpg" alt="" class="big"
-                        onclick="_main.showImageModal(this)">
+                        onclick="_index.showImageModal(this)">
                     <div class="img_small">
                         <img src="https://files.mbaharip.me/0:/sample/livery-yukina.jpg" alt="" class="small active"
-                            onclick="_main.changeImage('design', 0)">
+                            onclick="_index.changeImage('design', 0)">
                         <img src="https://files.mbaharip.me/0:/sample/livery-rize.jpg" alt="" class="small"
-                            onclick="_main.changeImage('design', 1)">
+                            onclick="_index.changeImage('design', 1)">
                         <img src="https://files.mbaharip.me/0:/sample/livery-marisa.jpg" alt="" class="small"
-                            onclick="_main.changeImage('design', 2)">
+                            onclick="_index.changeImage('design', 2)">
                     </div>
                 </div>
                 <span class="title">Design</span>
@@ -233,20 +233,6 @@
         <img src="assets/images/logo_works.svg" alt="" class="gallery__icon">
 
         <div class="container">
-            <!-- <a href="#" class="gallery__items">
-                <img src="assets/images/img-failed.png" alt="" class="thumb">
-                <div class="info">
-                    <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
-                        error.</span>
-                    <span class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, iusto delectus,
-                        itaque nisi facilis commodi enim hic nobis deserunt quam, expedita nulla sequi quasi
-                        esse!</span>
-                    <div class="details">
-                        <span class="category">Category</span>
-                        <span class="date">00-00-0000</span>
-                    </div>
-                </div>
-            </a> -->
         </div>
 
         <a href="/works" class="seeMore button">See More ></a>

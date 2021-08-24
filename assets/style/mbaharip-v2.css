@@ -15,7 +15,7 @@ body {
 
 body footer {
   width: 100vw;
-  height: 2rem;
+  height: 2vh;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -146,8 +146,18 @@ a.button {
   border-bottom: 10vh solid #0d0d0d;
 }
 
+.gap-dark-tris-top {
+  border-right: 50vw solid transparent;
+  border-left: 50vw solid transparent;
+  border-top: 10vh solid #0d0d0d;
+}
+
 div.gap {
   height: 25vh;
+}
+
+div.gap-10 {
+  height: 10vh;
 }
 
 section#modal {
@@ -395,6 +405,8 @@ section#about div.about__org ul.org__list {
 
 section#about div.about__org ul.org__list li.org__items {
   text-align: center;
+  min-width: 25vw;
+  max-width: 25vw;
 }
 
 section#about div.about__org ul.org__list li.org__items span.org__name {
@@ -653,7 +665,9 @@ section#gallery div.container a.gallery__items img.thumb {
 
 section#gallery div.container a.gallery__items div.info {
   width: 100%;
-  height: 50%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -661,7 +675,8 @@ section#gallery div.container a.gallery__items div.info {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: rgba(13, 13, 13, 0.9);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(13, 13, 13, 0)), to(#0d0d0d));
+  background: linear-gradient(rgba(13, 13, 13, 0), #0d0d0d);
   padding: .5rem;
   position: relative;
   top: 50%;
@@ -680,11 +695,13 @@ section#gallery div.container a.gallery__items div.info span.title {
   font-size: 1.5rem;
   font-weight: bold;
   -webkit-line-clamp: 1;
+  margin-bottom: 1rem;
 }
 
 section#gallery div.container a.gallery__items div.info span.desc {
   margin: auto;
   -webkit-line-clamp: 3;
+  display: none;
 }
 
 section#gallery div.container a.gallery__items div.info div.details {
@@ -701,7 +718,7 @@ section#gallery div.container a.gallery__items div.info div.details span {
 }
 
 section#gallery div.container a.gallery__items:hover img.thumb {
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 section#gallery div.container a.gallery__items:hover div.info {
@@ -767,6 +784,235 @@ section#contact a.mail {
 section#contact a.mail:hover {
   color: #0d0d0d;
   background: #f2f2f2;
+}
+
+section#navbar {
+  width: 100vw;
+  height: 7.5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: .75rem;
+}
+
+section#navbar div.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  margin-left: 2vw;
+  gap: .5rem;
+}
+
+section#navbar div.logo img {
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+section#navbar div.logo img.logo__text {
+  height: 75%;
+}
+
+section#navbar div.category {
+  font-size: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 2vw;
+}
+
+section#navbar div.category a.category__link {
+  padding: 1rem;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: border-color 0.5s;
+  transition: border-color 0.5s;
+}
+
+section#navbar div.category a.category__link:hover {
+  border-color: #c2c2c2;
+}
+
+section#navbar div.category a.active {
+  background: #f2f2f2;
+  color: #0d0d0d;
+  border-color: #374151;
+}
+
+section#navbar div.category a.active:hover {
+  border-color: #374151;
+}
+
+section#worksGallery {
+  width: 100vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 70.5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  background: #f2f2f2;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+}
+
+section#worksGallery div.title {
+  color: #0d0d0d;
+  font-size: 3rem;
+  font-weight: bold;
+  text-decoration: underline;
+  padding: 2rem;
+}
+
+section#worksGallery div.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 2rem;
+}
+
+section#worksGallery div.container div.loading {
+  display: block;
+  opacity: 1;
+  position: absolute;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+section#worksGallery div.container div.loading img {
+  height: 5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+section#worksGallery div.container div.hide {
+  opacity: 0;
+}
+
+section#worksGallery div.container div.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  gap: 1rem;
+}
+
+section#worksGallery div.container div.content a.posts {
+  max-width: 17.5%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  background: #171717;
+  border-radius: .5rem;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+section#worksGallery div.container div.content a.posts img {
+  width: 100%;
+  height: auto;
+  max-height: 15rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-bottom: 1px solid rgba(194, 194, 194, 0.5);
+}
+
+section#worksGallery div.container div.content a.posts span {
+  color: #f2f2f2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: .5rem .25rem;
+}
+
+section#worksGallery div.container div.content a.posts div.top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+}
+
+section#worksGallery div.container div.content a.posts div.top span.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  -webkit-line-clamp: 1;
+}
+
+section#worksGallery div.container div.content a.posts div.top span.description {
+  -webkit-line-clamp: 3;
+}
+
+section#worksGallery div.container div.content a.posts div.bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: .5rem;
+}
+
+section#worksGallery div.container div.content a.posts div.bottom span {
+  color: #c2c2c2;
+  font-size: .9rem;
+}
+
+section#worksGallery div.container div.content a.posts:hover {
+  -webkit-transform: scale(1.025);
+          transform: scale(1.025);
 }
 
 section#notFound {
