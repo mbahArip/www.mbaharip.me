@@ -7,11 +7,15 @@ var _utility = new Util();
 
 async function global__init() {
     _firebase.init();
-    _index.imageLoad();
 }
 
 async function home__init() {
     global__init();
     _firebase.getWorks();
+    _utility.imageLoad();
     _utility.footer();
+}
+
+async function works__init() {
+    global__init();
 }

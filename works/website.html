@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Primary Meta Tags -->
+    <title>Works :: mbahArip</title>
+    <meta name="title" content="Works :: mbahArip" />
+    <meta name="description" content="Personal website of mbahArip" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.mbaharip.me/works" />
+    <meta property="og:title" content="Works :: mbahArip" />
+    <meta property="og:description" content="Personal website of mbahArip" />
+    <meta property="og:image" content="assets/images/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.mbaharip.me/works" />
+    <meta property="twitter:title" content="Works :: mbahArip" />
+    <meta property="twitter:description" content="Personal website of mbahArip" />
+    <meta property="twitter:image" content="assets/images/og-image.png" />
+
+    <!-- Style -->
+    <link rel="stylesheet" href="../assets/style/mbaharip-v2.css" />
+
+    <!-- Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- Script -->
+    <script src="https://kit.fontawesome.com/527fbb25e1.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+    <script>
+        self.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
+    </script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app-check.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+</head>
+
+<body>
+    <section id="navbar">
+        <div class="logo">
+            <img src="../assets/images/logo_icon.svg" alt="" class="logo__icon">
+            <img src="../assets/images/logo_text_inline.svg" alt="mbahArip" class="logo__text">
+        </div>
+        <div class="category">
+            <a href="../index" class="category__link">Home</a>
+            <a href="index" class="category__link">All Works</a>
+            <a href="3d-works" class="category__link">3D Works</a>
+            <a href="design" class="category__link">Design Graphics</a>
+            <a href="game-livery" class="category__link">Game Livery</a>
+            <a href="website" class="category__link active">Website</a>
+        </div>
+    </section>
+
+    <div class="gap-10 gap-dark-tris-top bg-white"></div>
+
+    <section id="worksGallery">
+        <div class="title">Website</div>
+        <div class="container">
+            <div class="loading">
+                <img src="../assets/images/icon_loading.svg">
+            </div>
+            <div class="content">
+            </div>
+            <div class="no_content hide">
+                It seems i can't find anything here.
+                <img src="../assets/images/404_icon.svg">
+            </div>
+            <div class="pagination hide">
+                <span class="page active">1</span>
+                <span class="page">2</span>
+                <span class="page">3</span>
+                <span class="page">4</span>
+                <span class="page">5</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="gap-10 gap-dark-tris-bottom bg-white"></div>
+
+    <footer>
+        <span class="footer">2021 - mbahArip</span>
+    </footer>
+</body>
+<script src="../assets/js/func.js"></script>
+<script src="../assets/js/app.js"></script>
+<script defer>
+    works__init();
+    _firebase.getGallery('web');
+</script>
+
+</html>

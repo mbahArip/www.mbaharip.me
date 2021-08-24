@@ -58,7 +58,7 @@
             <a href="../index" class="category__link">Home</a>
             <a href="index" class="category__link active">All Works</a>
             <a href="3d-works" class="category__link">3D Works</a>
-            <a href="design" class="category__link">Design</a>
+            <a href="design" class="category__link">Design Graphics</a>
             <a href="game-livery" class="category__link">Game Livery</a>
             <a href="website" class="category__link">Website</a>
         </div>
@@ -69,24 +69,21 @@
     <section id="worksGallery">
         <div class="title">All Works</div>
         <div class="container">
-            <div class="loading hide">
+            <div class="loading">
                 <img src="../assets/images/icon_loading.svg">
             </div>
             <div class="content">
-                <a href="details?id=1" class="posts">
-                    <img src="../assets/images/img-failed.png" alt="Title" class="thumb">
-                    <div class="top">
-                        <span class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque aperiam
-                            maiores nesciunt. Necessitatibus, quod nobis?</span>
-                        <span class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
-                            sit officiis tenetur magni repellat ex quasi esse at doloribus, totam dolorum. Explicabo vel
-                            ex sit?</span>
-                    </div>
-                    <div class="bottom">
-                        <span class="category">Category</span>
-                        <span class="date">Date</span>
-                    </div>
-                </a>
+            </div>
+            <div class="no_content hide">
+                It seems i can't find anything here.
+                <img src="../assets/images/404_icon.svg">
+            </div>
+            <div class="pagination hide">
+                <span class="page active">1</span>
+                <span class="page">2</span>
+                <span class="page">3</span>
+                <span class="page">4</span>
+                <span class="page">5</span>
             </div>
         </div>
     </section>
@@ -99,5 +96,9 @@
 </body>
 <script src="../assets/js/func.js"></script>
 <script src="../assets/js/app.js"></script>
+<script defer>
+    works__init();
+    _firebase.getGallery();
+</script>
 
 </html>

@@ -16,6 +16,7 @@ body {
 body footer {
   width: 100vw;
   height: 2vh;
+  padding: 2rem;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -620,6 +621,7 @@ section#gallery img.gallery__icon {
 }
 
 section#gallery div.container {
+  margin: 5rem auto 2rem auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -628,9 +630,14 @@ section#gallery div.container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: .5rem;
-  margin: 5rem auto 2rem auto;
-  max-width: 122.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  gap: 2rem;
 }
 
 section#gallery div.container a.gallery__items {
@@ -723,6 +730,84 @@ section#gallery div.container a.gallery__items:hover img.thumb {
 
 section#gallery div.container a.gallery__items:hover div.info {
   top: 0;
+}
+
+section#gallery div.container a.posts {
+  max-width: 17.5rem;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  background: #171717;
+  border-radius: .5rem;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+section#gallery div.container a.posts img {
+  width: 17.5rem;
+  height: 15rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-bottom: 1px solid rgba(194, 194, 194, 0.5);
+}
+
+section#gallery div.container a.posts span {
+  color: #f2f2f2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: .5rem .25rem;
+}
+
+section#gallery div.container a.posts div.top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+}
+
+section#gallery div.container a.posts div.top span.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  -webkit-line-clamp: 1;
+}
+
+section#gallery div.container a.posts div.top span.description {
+  display: none;
+  -webkit-line-clamp: 3;
+}
+
+section#gallery div.container a.posts div.bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: .5rem;
+}
+
+section#gallery div.container a.posts div.bottom span {
+  color: #c2c2c2;
+  font-size: .9rem;
+}
+
+section#gallery div.container a.posts:hover {
+  -webkit-transform: scale(1.025);
+          transform: scale(1.025);
 }
 
 section#gallery a.seeMore {
@@ -886,6 +971,10 @@ section#worksGallery div.container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
   height: 100%;
   -webkit-box-pack: center;
@@ -914,8 +1003,8 @@ section#worksGallery div.container div.loading img {
      object-fit: contain;
 }
 
-section#worksGallery div.container div.hide {
-  opacity: 0;
+section#worksGallery div.container .hide {
+  opacity: 0 !important;
 }
 
 section#worksGallery div.container div.content {
@@ -930,7 +1019,7 @@ section#worksGallery div.container div.content {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
+  width: 90%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -938,7 +1027,7 @@ section#worksGallery div.container div.content {
 }
 
 section#worksGallery div.container div.content a.posts {
-  max-width: 17.5%;
+  max-width: 20rem;
   height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -950,18 +1039,18 @@ section#worksGallery div.container div.content a.posts {
   overflow: hidden;
   background: #171717;
   border-radius: .5rem;
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
 }
 
 section#worksGallery div.container div.content a.posts img {
-  width: 100%;
-  height: auto;
-  max-height: 15rem;
-  -o-object-fit: contain;
-     object-fit: contain;
+  width: 20rem;
+  height: 15rem;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-bottom: 1px solid rgba(194, 194, 194, 0.5);
 }
 
@@ -1013,6 +1102,62 @@ section#worksGallery div.container div.content a.posts div.bottom span {
 section#worksGallery div.container div.content a.posts:hover {
   -webkit-transform: scale(1.025);
           transform: scale(1.025);
+}
+
+section#worksGallery div.container div.no_content {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3rem;
+  font-size: 2rem;
+  color: #0d0d0d;
+  opacity: 1;
+  font-weight: bold;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+section#worksGallery div.container div.no_content img {
+  width: 5rem;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  opacity: 1;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+section#worksGallery div.container div.pagination {
+  display: none;
+  gap: .25rem;
+  margin-top: 2rem;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+section#worksGallery div.container div.pagination span {
+  color: #0d0d0d;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: .5rem;
+  border-radius: .5rem;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+section#worksGallery div.container div.pagination span:hover {
+  background: #c2c2c2;
+}
+
+section#worksGallery div.container div.pagination span.active {
+  color: #f2f2f2;
+  font-weight: bold;
+  cursor: default;
+  background: #0d0d0d;
 }
 
 section#notFound {
