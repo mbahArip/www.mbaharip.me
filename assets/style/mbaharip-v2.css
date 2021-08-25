@@ -1024,6 +1024,8 @@ section#worksGallery div.container div.content {
   height: -moz-fit-content;
   height: fit-content;
   gap: 1rem;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
 
 section#worksGallery div.container div.content a.posts {
