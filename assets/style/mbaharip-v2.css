@@ -1199,6 +1199,7 @@ section#notFound span.details {
 
 section#notFound a {
   margin: 1rem auto;
+  text-decoration: underline;
 }
 
 section#notFound img {
