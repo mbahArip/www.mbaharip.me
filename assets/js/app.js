@@ -12,17 +12,20 @@ async function global__init() {
 
 async function home__init() {
     global__init();
+    await _utility.sleep(10);
     _firebase.getWorks();
     _utility.footer();
 }
 
 async function works__init() {
     global__init();
+    await _utility.sleep(10);
     _utility.footer();
 }
 
 async function details__init() {
     global__init();
+    await _utility.sleep(10);
     _details.populateData();
     _utility.footer();
 }
