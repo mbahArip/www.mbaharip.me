@@ -466,7 +466,7 @@ class details {
 
 		let twitBase = 'https://twitter.com/intent/tweet';
 		let twitText = `?text=${data['title']}`;
-		let twitUrl = `&url=${window.location.href}`;
+		let twitUrl = `&url=${window.location.href}&utm_source=https://www.mbaharip.me`;
 		let twitVia = `&via=mbahArip_`;
 		document.querySelector('div.details div.details__text div.extra a.social__twitter').href = twitBase + twitText + twitUrl + twitVia; //Facebook Share
 
