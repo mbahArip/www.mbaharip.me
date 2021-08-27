@@ -417,9 +417,15 @@ class details {
 			.then(snapshot => {
 				return snapshot.val();
 			})
+		let imgBase = `https://files.mbaharip.me/0:/posts/[${data['id']}]%20${escape(data['title'])}`
+
 		document.title = `${data['title']} :: mbahArip`;
 		document.getElementsByTagName('meta')["title"].content = `${data['title']} :: mbahArip`;
 		document.getElementsByTagName('meta')["description"].content = `${data['description']}`;
+		document.getElementsByTagName('meta')["og:title"].content = `${data['title']} :: mbahArip`;
+		document.getElementsByTagName('meta')["og:description"].content = `${data['description']}`;
+		document.getElementsByTagName('meta')["og:url"].content = `${window.location.href}`;
+		document.getElementsByTagName('meta')["og:image"].content = `${imgBase}/${data['thumb']}`;
 
 		let category;
 		let categoryRef;
@@ -470,7 +476,6 @@ class details {
 		let twitVia = `&via=mbahArip_`;
 		document.querySelector('div.details div.details__text div.extra a.social__twitter').href = twitBase + twitText + twitUrl + twitVia; //Facebook Share
 
-		let imgBase = `https://files.mbaharip.me/0:/posts/[${data['id']}]%20${escape(data['title'])}`
 		document.querySelector('div.details div.thumbnail img.thumb').src = `${imgBase}/${data['thumb']}`; //Thumbnail
 
 		document.querySelector('p.description').innerText = data['description']; //Description
