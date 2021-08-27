@@ -422,10 +422,11 @@ class details {
 		document.title = `${data['title']} :: mbahArip`;
 		document.getElementsByTagName('meta')["title"].content = `${data['title']} :: mbahArip`;
 		document.getElementsByTagName('meta')["description"].content = `${data['description']}`;
-		document.getElementsByTagName('meta')["og:title"].content = `${data['title']} :: mbahArip`;
-		document.getElementsByTagName('meta')["og:description"].content = `${data['description']}`;
-		document.getElementsByTagName('meta')["og:url"].content = `${window.location.href}`;
-		document.getElementsByTagName('meta')["og:image"].content = `${imgBase}/${data['thumb']}`;
+		// console.log('meta')[0]['attributes'][0]['nodeValue'];
+		document.getElementsByTagName('meta')[6].content = `${window.location.href}`;
+		document.getElementsByTagName('meta')[7].content = `${data['title']} :: mbahArip`;
+		document.getElementsByTagName('meta')[8].content = `${data['description']}`;
+		document.getElementsByTagName('meta')[9].content = `${imgBase}/${data['thumb']}`;
 
 		let category;
 		let categoryRef;

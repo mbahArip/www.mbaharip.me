@@ -169,16 +169,8 @@
 
     function share() {
         FB.ui({
-            method: 'share_open_graph',
-            action_type: 'og.likes',
-            action_properties: JSON.stringify({
-                object: {
-                    'og:url': 'https://www.mbaharip.me/works/details?id=1',
-                    'og:title': 'title',
-                    'og:description': 'uwu',
-                    'og:image': 'https://www.mbaharip.me/assets/images/og-image.png'
-                }
-            })
+            method: 'share',
+            href: window.location.href,
         }, function (response) {});
     }
 </script>
