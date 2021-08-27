@@ -15,8 +15,7 @@ body {
 
 body footer {
   width: 100vw;
-  height: 2vh;
-  padding: 2rem;
+  height: 7.5vh;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -99,6 +98,18 @@ a.button {
 .gap-light-tris-topleft {
   border-right: 100vw solid transparent;
   border-top: 25vh solid #f2f2f2;
+}
+
+.gap-light-tris-bottom {
+  border-right: 50vw solid transparent;
+  border-left: 50vw solid transparent;
+  border-bottom: 10vh solid #f2f2f2;
+}
+
+.gap-light-tris-top {
+  border-right: 50vw solid transparent;
+  border-left: 50vw solid transparent;
+  border-top: 10vh solid #f2f2f2;
 }
 
 .gap-gray-tris-botright {
@@ -942,7 +953,7 @@ section#worksGallery {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  min-height: 70.5vh;
+  min-height: 65vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -955,8 +966,6 @@ section#worksGallery {
           align-items: center;
   padding: 0;
   background: #f2f2f2;
-  -webkit-transition: height 0.5s;
-  transition: height 0.5s;
 }
 
 section#worksGallery div.title {
@@ -1160,6 +1169,311 @@ section#worksGallery div.container div.pagination span.active {
   font-weight: bold;
   cursor: default;
   background: #0d0d0d;
+}
+
+section#navbarDetails {
+  width: 100vw;
+  height: 7.5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: .75rem;
+}
+
+section#navbarDetails div.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  margin-left: 2vw;
+  gap: .5rem;
+}
+
+section#navbarDetails div.logo img {
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+section#navbarDetails div.logo img.logo__text {
+  height: 75%;
+}
+
+section#content {
+  width: 100vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: #f2f2f2;
+}
+
+section#loading {
+  width: 100vw;
+  height: 65vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  opacity: 1;
+  background: #f2f2f2;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+section#loading img {
+  height: 5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+section#postsDetails {
+  width: 100vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: none;
+  opacity: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #f2f2f2;
+  padding: 2.5vh 2.5vw;
+  gap: 2.5vh;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+section#postsDetails div.path {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: .5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section#postsDetails div.path a.path__home,
+section#postsDetails div.path a.path__category {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #0d0d0d;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+
+section#postsDetails div.path a.path__home:hover,
+section#postsDetails div.path a.path__category:hover {
+  color: #374151;
+}
+
+section#postsDetails div.path span {
+  font-size: 1.75rem;
+  font-style: italic;
+}
+
+section#postsDetails div.path span.path__title {
+  font-size: 1.25rem;
+  font-weight: normal;
+  font-style: normal;
+}
+
+section#postsDetails div.details {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section#postsDetails div.details div.details__text {
+  padding: 1rem 5rem;
+}
+
+section#postsDetails div.details div.details__text span.title {
+  font-size: 2.5rem;
+}
+
+section#postsDetails div.details div.details__text div.extra {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .5rem;
+}
+
+section#postsDetails div.details div.details__text div.extra span {
+  font-size: .9rem;
+  font-style: italic;
+}
+
+section#postsDetails div.details div.details__text div.extra span.separator {
+  font-size: 1.5rem;
+  font-weight: lighter;
+}
+
+section#postsDetails div.details div.details__text div.extra a.social__link {
+  font-size: .9rem;
+  font-weight: bold;
+  padding: .15rem .25rem;
+  border-radius: .25rem;
+  color: #f2f2f2;
+}
+
+section#postsDetails div.details div.details__text div.extra a.social__facebook {
+  background: #1877f2;
+}
+
+section#postsDetails div.details div.details__text div.extra a.social__facebook:hover {
+  background: #155db9;
+}
+
+section#postsDetails div.details div.details__text div.extra a.social__twitter {
+  background: #1b95e0;
+}
+
+section#postsDetails div.details div.details__text div.extra a.social__twitter:hover {
+  background: #1873ab;
+}
+
+section#postsDetails div.details div.thumbnail {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  margin: 1rem auto;
+}
+
+section#postsDetails div.details div.thumbnail img.thumb {
+  background: #171717;
+  max-height: 50vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+section#postsDetails p.description {
+  width: 90%;
+  font-size: 1.15rem;
+  color: #0d0d0d;
+  text-align: center;
+}
+
+section#postsDetails div.link {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section#postsDetails div.link span.header {
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: underline;
+  margin: 1rem;
+}
+
+section#postsDetails div.link div.link__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+}
+
+section#postsDetails div.link div.link__list a.link_item {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .25rem;
+  font-weight: bold;
+  position: relative;
+  top: 0;
+  -webkit-transition: top 0.5s, color 0.5s;
+  transition: top 0.5s, color 0.5s;
+}
+
+section#postsDetails div.link div.link__list a.link_item img {
+  width: 1rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+section#postsDetails div.link div.link__list a.link_item:hover {
+  top: -.25rem;
+  color: #374151;
+}
+
+section#postsDetails div.images {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .5rem;
+}
+
+section#postsDetails div.images img.img {
+  background: #171717;
+  width: 80%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+section#postsDetails a,
+section#postsDetails span {
+  color: #0d0d0d;
 }
 
 section#notFound {

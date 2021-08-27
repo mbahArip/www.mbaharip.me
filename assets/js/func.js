@@ -1,4 +1,4 @@
-var DEBUG = true;
+var DEBUG = false;
 if (!DEBUG) {
 	if (!window.console) window.console = {};
 	var methods = ["log", "debug", "warn", "info"];
@@ -92,7 +92,7 @@ class googleFirebase {
 		// 	`
 		post.innerHTML =
 			`
-			<img src="https://files.mbaharip.me/0:/posts/[${itemsList[`id`]}] ${itemsList['title']}/${itemsList['thumb']}" alt="${itemsList['title']}" class="thumb">
+			<img src="https://files.mbaharip.me/0:/posts/[${itemsList[`id`]}] ${itemsList['title']}/${itemsList['thumb']}" alt="${itemsList['title']}" class="thumb" onerror="_utility.imageLoadFail(this)">
 			<div class="top">
 				<span class="title">
 					${itemsList['title']}
@@ -201,7 +201,7 @@ class googleFirebase {
 		function postData(itemsList, category, date) {
 			let post =
 				`
-				<img src="https://files.mbaharip.me/0:/posts/[${itemsList[`id`]}] ${itemsList['title']}/${itemsList['thumb']}" alt="${itemsList['title']}" class="thumb">
+				<img src="https://files.mbaharip.me/0:/posts/[${itemsList[`id`]}] ${itemsList['title']}/${itemsList['thumb']}" alt="${itemsList['title']}" class="thumb" onerror="_utility.imageLoadFail(this)">
 				<div class="top">
 					<span class="title">
 						${itemsList['title']}
@@ -398,6 +398,120 @@ class index {
 		await _modal.showModal();
 	}
 }
+class details {
+	checkID() {
+		let id = _utility.getParameter('id');
+		if (id == undefined || id == '') {
+			window.location.href = '../works'
+		}
+
+		return id;
+	}
+
+	async populateData() {
+		let id = this.checkID();
+
+		//getData
+		let data = await firebase.database().ref(`portofolio/${id}`)
+			.get()
+			.then(snapshot => {
+				return snapshot.val();
+			})
+
+		let category;
+		let categoryRef;
+		switch (data['category']) {
+			case '3d':
+				category = '3D Works';
+				categoryRef = '3d-works';
+				break;
+			case 'livery':
+				category = 'Livery Design';
+				categoryRef = 'game-livery';
+				break;
+			case '2d':
+				category = '2D Graphics';
+				categoryRef = 'design';
+				break;
+			case 'web':
+				category = 'Website';
+				categoryRef = 'website';
+				break;
+		}
+		let date;
+		const monthNames = ["January", "February", "March", "April", "May", "June",
+			"July", "August", "September", "October", "November", "December"
+		];
+		let unix = new Date(data['date'] * 1000);
+		let dDate = unix.getDate();
+		let dMonth = monthNames[unix.getMonth()];
+		let dYear = unix.getFullYear();
+		date = `${dDate} ${dMonth} ${dYear}`;
+
+		console.log(data);
+		document.querySelector('div.path a.path__category').innerText = category; //Path Category
+		document.querySelector('div.path a.path__category').href = `../works/${categoryRef}`; //Path Category Link
+		document.querySelector('div.path span.path__title').innerText = data['title'] //Path Title
+
+		document.querySelector('div.details div.details__text span.title').innerText = data['title']; //Details Title
+		document.querySelector('div.details div.details__text div.extra span.category').innerText = category; //Details Category
+		document.querySelector('div.details div.details__text div.extra span.date').innerText = date; //Details Date
+
+		let fbBase = 'https://www.facebook.com/sharer/sharer.php';
+		let fbParameter = `?u=${window.location.href}`;
+		document.querySelector('div.details div.details__text div.extra a.social__facebook').href = fbBase + fbParameter; //Facebook Share
+
+		let twitBase = 'https://twitter.com/intent/tweet';
+		let twitText = `?text=${data['title']}`;
+		let twitUrl = `&url=${window.location.href}`;
+		let twitVia = `&via=mbahArip_`;
+		document.querySelector('div.details div.details__text div.extra a.social__twitter').href = twitBase + twitText + twitUrl + twitVia; //Facebook Share
+
+		let imgBase = `https://files.mbaharip.me/0:/posts/[${data['id']}]%20${escape(data['title'])}`
+		document.querySelector('div.details div.thumbnail img.thumb').src = `${imgBase}/${data['thumb']}`; //Thumbnail
+
+		document.querySelector('p.description').innerText = data['description']; //Description
+
+		document.querySelector('div.link div.link__list').innerHTML = '';
+		for (let i = 1; i <= 5; i++) {
+			if (data['link'][`link${i}`]['name'] !== '') {
+				let link = document.createElement('a');
+				link.href = data['link'][`link${i}`]['url'];
+				link.className = 'link_item';
+				link.setAttribute('target', '_blank')
+				link.setAttribute('rel', 'noopener noreferrer')
+				link.innerHTML =
+					`
+					<img src="../assets/images/icon_link.svg" alt="">
+                    ${data['link'][`link${i}`]['name']}
+					`;
+
+				document.querySelector('div.link div.link__list').appendChild(link);
+			}
+		}
+
+		document.querySelector('div.images').innerHTML = '';
+		for (let j = 1; j <= 5; j++) {
+			if (data['images'][`images${j}`] !== '') {
+				let postimg = document.createElement('img');
+				postimg.alt = `${data['title']} - Images ${j}`;
+				postimg.src = `${imgBase}/${data['images'][`images${j}`]}`;
+				postimg.className = 'img';
+				postimg.setAttribute('onerror', '_utility.imageLoadFail(this)');
+
+				document.querySelector('div.images').appendChild(postimg);
+			}
+		}
+
+		document.querySelector('section#loading').style.opacity = 0;
+		await _utility.sleep(500);
+		document.querySelector('section#loading').style.display = 'none';
+		await _utility.sleep(10);
+		document.querySelector('section#postsDetails').style.display = 'flex';
+		await _utility.sleep(10);
+		document.querySelector('section#postsDetails').style.opacity = 1;
+	}
+}
 
 class modal {
 	async showModal() {
@@ -415,26 +529,37 @@ class modal {
 }
 
 class Util {
-	imageLoad() {
-		let img = document.querySelectorAll('img');
+	imageLoadFail(element) {
+		let src = element.src;
+		let url = new URL(src);
+		if (!element.hasOwnProperty('retryCount')) element.retryCount = 0;
 
-		for (let i = 0; i < img.length; i++) {
-			img[i].addEventListener('error', () => {
-				let src = img[i].src;
-				let url = new URL(src);
-				if (!img[i].hasOwnProperty('retryCount')) img[i].retryCount = 0;
-
-				if (img[i].retryCount < 5) {
-					setTimeout(() => {
-						url.searchParams.set('retry', img[i].retryCount + 1);
-						img[i].src = url.toString;
-						img[i].retryCount += 1;
-					}, 1000);
-				} else {
-					img[i].src = '../assets/images/img-failed.png'
-				}
-			})
+		if (element.retryCount < 5) {
+			setTimeout(() => {
+				url.searchParams.set('retry', element.retryCount + 1);
+				element.src = url.toString;
+				element.retryCount += 1;
+			}, 1000);
+		} else {
+			element.src = '../assets/images/img-failed.png'
 		}
+		// for (let i = 0; i < img.length; i++) {
+		// 	img[i].addEventListener('error', () => {
+		// 		let src = img[i].src;
+		// 		let url = new URL(src);
+		// 		if (!img[i].hasOwnProperty('retryCount')) img[i].retryCount = 0;
+
+		// 		if (img[i].retryCount < 5) {
+		// 			setTimeout(() => {
+		// 				url.searchParams.set('retry', img[i].retryCount + 1);
+		// 				img[i].src = url.toString;
+		// 				img[i].retryCount += 1;
+		// 			}, 1000);
+		// 		} else {
+		// 			img[i].src = '../assets/images/img-failed.png'
+		// 		}
+		// 	})
+		// }
 	}
 
 	footer() {

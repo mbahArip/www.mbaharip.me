@@ -51,7 +51,8 @@
 <body onload="home__init();">
     <section id="modal">
         <div class="modal_image modal">
-            <img src="https://files.mbaharip.me/0:/sample/redraw-triadprimus.jpg">
+            <img src="https://files.mbaharip.me/0:/sample/redraw-triadprimus.jpg"
+                onerror="_utility.imageLoadFail(this)">
             <button class="close" onclick="_modal.closeModal()">
                 <img src="assets/images/icon_close.svg">
             </button>
@@ -169,14 +170,15 @@
             <div id="bodykit" class="services__items">
                 <div class="img__sample">
                     <img src="https://files.mbaharip.me/0:/sample/kit-180sx-garagemak.jpg" alt="" class="big"
-                        onclick="_index.showImageModal(this)">
+                        onclick="_index.showImageModal(this)" onerror="_utility.imageLoadFail(this)">
                     <div class="img_small">
                         <img src="https://files.mbaharip.me/0:/sample/kit-180sx-garagemak.jpg" alt=""
-                            class="small active" onclick="_index.changeImage('bodykit', 0)">
+                            class="small active" onclick="_index.changeImage('bodykit', 0)"
+                            onerror="_utility.imageLoadFail(this)">
                         <img src="https://files.mbaharip.me/0:/sample/kit-s13-cmw.jpg" alt="" class="small"
-                            onclick="_index.changeImage('bodykit', 1)">
+                            onclick="_index.changeImage('bodykit', 1)" onerror="_utility.imageLoadFail(this)">
                         <img src="https://files.mbaharip.me/0:/sample/kit-gt86-abflug.jpg" alt="" class="small"
-                            onclick="_index.changeImage('bodykit', 2)">
+                            onclick="_index.changeImage('bodykit', 2)" onerror="_utility.imageLoadFail(this)">
                     </div>
                 </div>
                 <span class="title">3D Works</span>
@@ -190,11 +192,12 @@
                         onclick="_index.showImageModal(this)">
                     <div class="img_small">
                         <img src="https://files.mbaharip.me/0:/sample/redraw-triadprimus.jpg" alt=""
-                            class="small active" onclick="_index.changeImage('redraw', 0)">
+                            class="small active" onclick="_index.changeImage('redraw', 0)"
+                            onerror="_utility.imageLoadFail(this)">
                         <img src="https://files.mbaharip.me/0:/sample/redraw-asuka.jpg" alt="" class="small"
-                            onclick="_index.changeImage('redraw', 1)">
+                            onclick="_index.changeImage('redraw', 1)" onerror="_utility.imageLoadFail(this)">
                         <img src="https://files.mbaharip.me/0:/sample/redraw-ryuuko.jpg" alt="" class="small"
-                            onclick="_index.changeImage('redraw', 2)">
+                            onclick="_index.changeImage('redraw', 2)" onerror="_utility.imageLoadFail(this)">
                     </div>
                 </div>
                 <span class="title">Data Redraw</span>
@@ -209,14 +212,14 @@
             <div id="design" class="services__items">
                 <div class="img__sample">
                     <img src="https://files.mbaharip.me/0:/sample/livery-yukina.jpg" alt="" class="big"
-                        onclick="_index.showImageModal(this)">
+                        onclick="_index.showImageModal(this)" onerror="_utility.imageLoadFail(this)">
                     <div class="img_small">
                         <img src="https://files.mbaharip.me/0:/sample/livery-yukina.jpg" alt="" class="small active"
-                            onclick="_index.changeImage('design', 0)">
+                            onclick="_index.changeImage('design', 0)" onerror="_utility.imageLoadFail(this)">
                         <img src="https://files.mbaharip.me/0:/sample/livery-rize.jpg" alt="" class="small"
-                            onclick="_index.changeImage('design', 1)">
+                            onclick="_index.changeImage('design', 1)" onerror="_utility.imageLoadFail(this)">
                         <img src="https://files.mbaharip.me/0:/sample/livery-marisa.jpg" alt="" class="small"
-                            onclick="_index.changeImage('design', 2)">
+                            onclick="_index.changeImage('design', 2)" onerror="_utility.imageLoadFail(this)">
                     </div>
                 </div>
                 <span class="title">Design</span>
