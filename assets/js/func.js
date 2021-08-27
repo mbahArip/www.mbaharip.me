@@ -418,6 +418,8 @@ class details {
 				return snapshot.val();
 			})
 		document.title = `${data['title']} :: mbahArip`;
+		document.getElementsByTagName('meta')["title"].content = `${data['title']} :: mbahArip`;
+		document.getElementsByTagName('meta')["description"].content = `${data['description']}`;
 
 		let category;
 		let categoryRef;
