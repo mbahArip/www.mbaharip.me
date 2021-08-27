@@ -417,6 +417,7 @@ class details {
 			.then(snapshot => {
 				return snapshot.val();
 			})
+		document.title = `${data['title']} :: mbahArip`;
 
 		let category;
 		let categoryRef;
