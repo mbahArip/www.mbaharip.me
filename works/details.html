@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
     <meta property="og:url" content="https://www.mbaharip.me/works" />
     <meta property="og:title" content="Works :: mbahArip" />
     <meta property="og:description" content="Personal website of mbahArip" />
@@ -46,6 +46,18 @@
     </script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app-check.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '221244830002460',
+                autoLogAppEvents: true,
+                xfbml: true,
+                version: 'v11.0'
+            });
+        };
+    </script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 </head>
 
 <body>
@@ -147,13 +159,28 @@
     <div class="gap-10 gap-dark-tris-bottom bg-white"></div>
 
     <footer>
-        <span class="footer">2021 - mbahArip</span>
+        <span class="footer" onclick="share()">2021 - mbahArip</span>
     </footer>
 </body>
 <script src="../assets/js/func.js"></script>
 <script src="../assets/js/app.js"></script>
 <script defer>
     details__init();
+
+    function share() {
+        FB.ui({
+            method: 'share_open_graph',
+            action_type: 'og.likes',
+            action_properties: JSON.stringify({
+                object: {
+                    'og:url': 'https://www.mbaharip.me/works/details?id=1',
+                    'og:title': 'title',
+                    'og:description': 'uwu',
+                    'og:image': 'https://www.mbaharip.me/assets/images/og-image.png'
+                }
+            })
+        }, function (response) {});
+    }
 </script>
 
 </html>
