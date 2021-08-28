@@ -415,7 +415,11 @@ class details {
 		let data = await firebase.database().ref(`portofolio/${id}`)
 			.get()
 			.then(snapshot => {
-				return snapshot.val();
+				if (snapshot.val() == undefined) {
+					window.location.href = '../404';
+				} else {
+					return snapshot.val();
+				}
 			})
 		let imgBase = `https://files.mbaharip.me/0:/posts/[${data['id']}]%20${escape(data['title'])}`
 
