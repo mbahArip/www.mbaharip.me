@@ -46,8 +46,6 @@
     </script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app-check.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
-    <script src="assets/js/func.js"></script>
-    <script src="assets/js/app.js"></script>
 </head>
 
 <body onload="home__init();">
@@ -247,10 +245,6 @@
 
         <a href="/works" class="seeMore button">See More ></a>
     </section>
-    <script>
-        _firebase.init();
-        _firebase.getWorks();
-    </script>
 
     <div class="gap gap-dark-tris-bottom bg-white"></div>
 
@@ -266,8 +260,10 @@
     </section>
 
     <footer>
-        <span class="footer">2021 - mbahArip</span>
+        <span class="footer" onclick="share()">2021 - mbahArip</span>
     </footer>
 </body>
+<script src="assets/js/func.js"></script>
+<script src="assets/js/app.js"></script>
 
 </html>
