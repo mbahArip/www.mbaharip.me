@@ -56,6 +56,12 @@
             <button class="close" onclick="_modal.closeModal()">
                 <img src="assets/images/icon_close.svg">
             </button>
+            <button class="prev" onclick="_index.slideshowPrev()">
+                <img src="assets/images/icon_prev.svg">
+            </button>
+            <button class="next" onclick="_index.slideshowNext()">
+                <img src="assets/images/icon_next.svg">
+            </button>
         </div>
     </section>
 
@@ -171,7 +177,7 @@
             <div id="bodykit" class="services__items">
                 <div class="img__sample">
                     <img src="assets/sample/kit-180sx-garagemak.jpg" alt="" class="big"
-                        onclick="_index.showImageModal(this)" onerror="_utility.imageLoadFail(this)">
+                        onclick="_index.showImageModal(this, 'bodykit')" onerror="_utility.imageLoadFail(this)">
                     <div class="img_small">
                         <img src="assets/sample/kit-180sx-garagemak.jpg" alt="" class="small active"
                             onclick="_index.changeImage('bodykit', 0)" onerror="_utility.imageLoadFail(this)">
@@ -189,7 +195,7 @@
             <div id="redraw" class="services__items">
                 <div class="img__sample">
                     <img src="assets/sample/redraw-triadprimus.jpg" alt="" class="big"
-                        onclick="_index.showImageModal(this)">
+                        onclick="_index.showImageModal(this, 'redraw')" onerror="_utility.imageLoadFail(this)">
                     <div class="img_small">
                         <img src="assets/sample/redraw-triadprimus.jpg" alt="" class="small active"
                             onclick="_index.changeImage('redraw', 0)" onerror="_utility.imageLoadFail(this)">
@@ -210,8 +216,8 @@
             </div>
             <div id="design" class="services__items">
                 <div class="img__sample">
-                    <img src="assets/sample/livery-yukina.jpg" alt="" class="big" onclick="_index.showImageModal(this)"
-                        onerror="_utility.imageLoadFail(this)">
+                    <img src="assets/sample/livery-yukina.jpg" alt="" class="big"
+                        onclick="_index.showImageModal(this, 'design')" onerror="_utility.imageLoadFail(this)">
                     <div class="img_small">
                         <img src="assets/sample/livery-yukina.jpg" alt="" class="small active"
                             onclick="_index.changeImage('design', 0)" onerror="_utility.imageLoadFail(this)">

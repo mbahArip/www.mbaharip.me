@@ -1,4 +1,4 @@
-var DEBUG = false;
+var DEBUG = true;
 if (!DEBUG) {
 	if (!window.console) window.console = {};
 	var methods = ["log", "debug", "warn", "info"];
@@ -375,6 +375,11 @@ class googleFirebase {
 }
 
 class index {
+	constructor() {
+		this.index = 0;
+		this.element = '';
+	}
+
 	async changeImage(parent, index) {
 		let big = document.querySelector(`#${parent} div.img__sample img.big`);
 		let element = document.querySelectorAll(`#${parent} div.img__sample div.img_small img`);
@@ -390,13 +395,39 @@ class index {
 		await _utility.sleep(250);
 		big.style.opacity = 1
 		big.src = element[index].src;
+		this.index = index;
 	}
 
-	async showImageModal(element) {
+	async showImageModal(element, parent) {
 		document.querySelector('div.modal_image img').src = element.src.split('.jpg')[0] + '-hi.jpg';
 		document.querySelector('div.modal_image').style.display = 'flex';
+		let ele = document.querySelectorAll(`#${parent} div.img__sample div.img_small img`);
+		for (let i = 0; i < ele.length; i++) {
+			if (ele[i].classList.contains('active')) {
+				this.index = i;
+			}
+		}
+		this.element = parent;
 		await _modal.showModal();
 	}
+
+	async slideshowNext() {
+		this.index += 1;
+		if (this.index == 3) {
+			this.index = 0;
+		}
+		let element = document.querySelectorAll(`#${this.element} div.img__sample div.img_small img`);
+		document.querySelector('div.modal_image img').src = element[this.index].src.split('.jpg')[0] + '-hi.jpg';
+	}
+	async slideshowPrev() {
+		this.index -= 1;
+		if (this.index == -1) {
+			this.index = 2;
+		}
+		let element = document.querySelectorAll(`#${this.element} div.img__sample div.img_small img`);
+		document.querySelector('div.modal_image img').src = element[this.index].src.split('.jpg')[0] + '-hi.jpg';
+	}
+
 }
 class details {
 	checkID() {
@@ -527,8 +558,24 @@ class modal {
 		modalContainer.style.display = 'flex';
 		await _utility.sleep(10);
 		modalContainer.style.opacity = 1;
+
+		window.onkeydown = (event) => {
+			switch (event.key) {
+				case 'ArrowRight':
+					_index.slideshowNext()
+					break;
+				case 'ArrowLeft':
+					_index.slideshowPrev()
+					break;
+				case 'Escape':
+					this.closeModal();
+					break;
+			}
+		}
 	}
 	async closeModal() {
+		window.onkeydown = null;
+
 		let modalContainer = document.querySelector('section#modal');
 		modalContainer.style.opacity = 0;
 		await _utility.sleep(500);

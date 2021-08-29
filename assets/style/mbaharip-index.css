@@ -45,19 +45,19 @@ section#notFound {
 }
 
 section#notFound span.top {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: bold;
   color: #dc2727;
 }
 
 section#notFound span.bot {
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: bold;
-  margin: -1rem auto 0 auto;
 }
 
 section#notFound span.details {
   font-size: 1.5rem;
+  text-align: center;
 }
 
 section#notFound a {
@@ -229,6 +229,42 @@ div.gap-10 {
   max-height: 10vh;
 }
 
+@media screen and (max-width: 1366px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  section#notFound a {
+    font-size: 1.15rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 12px;
+  }
+  section#notFound a {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 10px;
+  }
+}
+
 section#modal {
   width: 100vw;
   height: 100vh;
@@ -259,21 +295,43 @@ section#modal div.modal_image img {
      object-fit: contain;
 }
 
-section#modal div.modal_image button.close {
+section#modal div.modal_image button {
   background: none;
   border: none;
+  cursor: pointer;
   color: #f2f2f2;
+  overflow: visible;
+  opacity: .8;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+section#modal div.modal_image button img {
+  width: 3rem;
+  height: 3rem;
+  -webkit-filter: invert(1) brightness(2) drop-shadow(0 0 2px #0d0d0d);
+          filter: invert(1) brightness(2) drop-shadow(0 0 2px #0d0d0d);
+}
+
+section#modal div.modal_image button:hover {
+  opacity: 1;
+}
+
+section#modal div.modal_image button.close {
   position: absolute;
   top: 5vh;
   right: 5vw;
-  cursor: pointer;
+  opacity: 1;
 }
 
-section#modal div.modal_image button.close img {
-  width: 3rem;
-  height: 3rem;
-  -webkit-filter: invert(1) brightness(2);
-          filter: invert(1) brightness(2);
+section#modal div.modal_image button.next {
+  position: absolute;
+  right: 5vw;
+}
+
+section#modal div.modal_image button.prev {
+  position: absolute;
+  left: 5vw;
 }
 
 section#headers {
