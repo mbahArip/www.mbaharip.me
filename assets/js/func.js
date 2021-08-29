@@ -217,7 +217,7 @@ class googleFirebase {
 				`;
 			return post;
 		}
-		let itemsPerPage = 5;
+		let itemsPerPage = 2;
 		let currentPage;
 
 		let data = new Promise((resolve, reject) => {

@@ -1,0 +1,231 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #f2f2f2;
+}
+
+body {
+  background: #0d0d0d;
+}
+
+body footer {
+  width: 100vw;
+  height: 7.5vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+body p.about {
+  font-size: 2rem !important;
+}
+
+section#notFound {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #171717;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section#notFound span.top {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #dc2727;
+}
+
+section#notFound span.bot {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: -1rem auto 0 auto;
+}
+
+section#notFound span.details {
+  font-size: 1.5rem;
+}
+
+section#notFound a {
+  margin: 1rem auto;
+  text-decoration: underline;
+}
+
+section#notFound img {
+  width: 25vw;
+  -o-object-fit: contain;
+     object-fit: contain;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  opacity: .25;
+}
+
+body::-webkit-scrollbar {
+  width: .5rem;
+}
+
+body::-webkit-scrollbar-button {
+  display: none;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #c2c2c2;
+  border-radius: .25rem;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #f2f2f2;
+}
+
+body::-webkit-scrollbar-track {
+  background: #171717;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.button {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  min-width: 75vw;
+  max-width: 80vw;
+  height: 4rem;
+  font-size: 2rem;
+  font-weight: bold;
+  border: 2px solid;
+  margin: 2rem auto;
+}
+
+.bg-white {
+  background: #f2f2f2 !important;
+}
+
+.bg-dark {
+  background: #0d0d0d !important;
+}
+
+.bg-gray {
+  background: #171717 !important;
+}
+
+.gap-dark2gray {
+  background: -webkit-gradient(linear, left top, left bottom, from(#171717), to(#0d0d0d)) !important;
+  background: linear-gradient(#171717, #0d0d0d) !important;
+  height: 10rem !important;
+}
+
+.gap-light-tris-botright {
+  border-left: 100vw solid transparent;
+  border-bottom: 10rem solid #f2f2f2;
+}
+
+.gap-light-tris-botleft {
+  border-right: 100vw solid transparent;
+  border-bottom: 10rem solid #f2f2f2;
+}
+
+.gap-light-tris-topright {
+  border-left: 100vw solid transparent;
+  border-top: 10rem solid #f2f2f2;
+}
+
+.gap-light-tris-topleft {
+  border-right: 100vw solid transparent;
+  border-top: 10rem solid #f2f2f2;
+}
+
+.gap-light-tris-bottom {
+  border-right: 50vw solid transparent;
+  border-left: 50vw solid transparent;
+  border-bottom: 5rem solid #f2f2f2;
+}
+
+.gap-light-tris-top {
+  border-right: 50vw solid transparent;
+  border-left: 50vw solid transparent;
+  border-top: 5rem solid #f2f2f2;
+}
+
+.gap-gray-tris-botright {
+  border-left: 100vw solid transparent;
+  border-bottom: 10rem solid #171717;
+}
+
+.gap-gray-tris-botleft {
+  border-right: 100vw solid transparent;
+  border-bottom: 10rem solid #171717;
+}
+
+.gap-gray-tris-topright {
+  border-left: 100vw solid transparent;
+  border-top: 10rem solid #171717;
+}
+
+.gap-gray-tris-topleft {
+  border-right: 100vw solid transparent;
+  border-top: 10rem solid #171717;
+}
+
+.gap-dark-tris-botright {
+  border-left: 100vw solid transparent;
+  border-bottom: 10rem solid #0d0d0d;
+}
+
+.gap-dark-tris-botleft {
+  border-right: 100vw solid transparent;
+  border-bottom: 10rem solid #0d0d0d;
+}
+
+.gap-dark-tris-topright {
+  border-left: 100vw solid transparent;
+  border-top: 10rem solid #0d0d0d;
+}
+
+.gap-dark-tris-topleft {
+  border-right: 100vw solid transparent;
+  border-top: 10rem solid #0d0d0d;
+}
+
+.gap-dark-tris-bottom {
+  border-right: 50vw solid transparent;
+  border-left: 50vw solid transparent;
+  border-bottom: 5rem solid #0d0d0d;
+}
+
+.gap-dark-tris-top {
+  border-right: 50vw solid transparent;
+  border-left: 50vw solid transparent;
+  border-top: 5rem solid #0d0d0d;
+}
+
+div.gap {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 25vh;
+}
+
+div.gap-10 {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 10vh;
+}
+/*# sourceMappingURL=mbaharip-global.css.map */
