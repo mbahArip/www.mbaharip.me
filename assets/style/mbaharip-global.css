@@ -45,19 +45,19 @@ section#notFound {
 }
 
 section#notFound span.top {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: bold;
   color: #dc2727;
 }
 
 section#notFound span.bot {
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: bold;
-  margin: -1rem auto 0 auto;
 }
 
 section#notFound span.details {
   font-size: 1.5rem;
+  text-align: center;
 }
 
 section#notFound a {
@@ -227,5 +227,41 @@ div.gap-10 {
   height: -moz-fit-content;
   height: fit-content;
   max-height: 10vh;
+}
+
+@media screen and (max-width: 1366px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  section#notFound a {
+    font-size: 1.15rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  html {
+    font-size: 12px;
+  }
+  section#notFound a {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 10px;
+  }
 }
 /*# sourceMappingURL=mbaharip-global.css.map */
