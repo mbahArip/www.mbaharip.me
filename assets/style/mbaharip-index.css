@@ -709,6 +709,7 @@ section#gallery div.container {
   height: -moz-fit-content;
   height: fit-content;
   gap: 2rem;
+  padding: .5rem;
 }
 
 section#gallery div.container a.gallery__items {
