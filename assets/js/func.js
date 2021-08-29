@@ -35,7 +35,7 @@ class googleFirebase {
 	getWorks() {
 		firebase.database().ref('portofolio')
 			.orderByChild('id')
-			.limitToLast(10)
+			.limitToLast(5)
 			.get()
 			.then(snapshot => {
 				let items = Object.values(snapshot.val());
@@ -217,7 +217,7 @@ class googleFirebase {
 				`;
 			return post;
 		}
-		let itemsPerPage = 2;
+		let itemsPerPage = 10;
 		let currentPage;
 
 		let data = new Promise((resolve, reject) => {
